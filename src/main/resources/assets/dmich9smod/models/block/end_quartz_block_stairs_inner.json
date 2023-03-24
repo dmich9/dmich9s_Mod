@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "dmich9smod:block/end_quartz_block",
+    "top": "dmich9smod:block/end_quartz_block",
+    "side": "dmich9smod:block/end_quartz_block"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/maple_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/maple_planks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/maple_slab_top"
+    }
+  }
+}

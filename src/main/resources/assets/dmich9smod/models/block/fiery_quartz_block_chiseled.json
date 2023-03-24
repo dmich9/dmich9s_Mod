@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "dmich9smod:block/chiseled_fiery_quartz_block_top",
+    "up": "dmich9smod:block/chiseled_fiery_quartz_block_top",
+    "north": "dmich9smod:block/chiseled_fiery_quartz_block",
+    "east": "dmich9smod:block/chiseled_fiery_quartz_block",
+    "south": "dmich9smod:block/chiseled_fiery_quartz_block",
+    "west": "dmich9smod:block/chiseled_fiery_quartz_block",
+    "particle": "dmich9smod:block/chiseled_fiery_quartz_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "dmich9smod:serendibite"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:serendibite_chestplate"
+  }
+}

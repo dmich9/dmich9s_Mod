@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#dmich9smod:anguish_logs",
+    "#dmich9smod:fright_logs",
+    "#dmich9smod:might_logs",
+    "#dmich9smod:dream_logs",
+    "#dmich9smod:fractured_logs",
+    "#dmich9smod:maple_logs"
+  ]
+}

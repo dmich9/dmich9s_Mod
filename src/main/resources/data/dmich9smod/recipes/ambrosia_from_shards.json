@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dmich9smod:ambrosia_shard"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:ambrosia"
+  }
+}

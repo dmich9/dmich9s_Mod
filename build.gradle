@@ -2,10 +2,14 @@ buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath 'org.parchmentmc:librarian:1.+'
     }
 }
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
@@ -14,7 +18,8 @@ plugins {
     id 'maven-publish'
 }
 apply plugin: 'net.minecraftforge.gradle'
-
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '0.0.1-1.18.2'
 group = 'net.dylan.dmich9smod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -38,7 +43,7 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'official', version: '1.18.2'
+    mappings channel: 'parchment', version: '2022.11.06-1.18.2'
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
@@ -140,19 +145,24 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+    maven {
+        url 'https://cursemaven.com'
+    }
 }
-
 dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
-
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:1.18.2-1.1.0.102")
+    runtimeOnly fg.deobf('curse.maven:JEI-238222:4352925')
+    runtimeOnly fg.deobf('curse.maven:WorldEdit-225608:3697298')
+    runtimeOnly fg.deobf('curse.maven:OpenBlocksElevator-250832:3670034')
+    runtimeOnly fg.deobf('curse.maven:Wand-399558:4393837')
+    runtimeOnly fg.deobf('curse.maven:MouseTweaks-60089:3578801')
+    runtimeOnly fg.deobf('curse.maven:AppleSkin-248787:3686482')
+    runtimeOnly fg.deobf('curse.maven:JourneyMap-32274:4437138')
+    runtimeOnly fg.deobf('curse.maven:Jade-324717:4082408')
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency

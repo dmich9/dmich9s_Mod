@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:serendibite"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:serendibite_shard",
+    "count": 9
+  }
+}

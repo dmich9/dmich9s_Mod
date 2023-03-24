@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "dmich9smod:block/anguish_pressure_plate" },
+    "powered=true": { "model": "dmich9smod:block/anguish_pressure_plate_down" }
+  }
+}

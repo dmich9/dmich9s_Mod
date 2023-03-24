@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "dmich9smod:block/end_dungeon_bricks",
+    "top": "dmich9smod:block/end_dungeon_bricks",
+    "side": "dmich9smod:block/end_dungeon_bricks"
+  }
+}

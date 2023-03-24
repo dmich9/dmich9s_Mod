@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_top",
+  "textures": {
+    "texture": "dmich9smod:block/fright_trapdoor"
+  }
+}

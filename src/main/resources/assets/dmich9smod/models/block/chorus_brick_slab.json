@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dmich9smod:block/chorus_bricks",
+    "top": "dmich9smod:block/chorus_bricks",
+    "side": "dmich9smod:block/chorus_bricks"
+  }
+}

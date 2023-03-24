@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:star_white",
+    "dmich9smod:star_orange",
+    "dmich9smod:star_magenta",
+    "dmich9smod:star_light_blue",
+    "dmich9smod:star_yellow",
+    "dmich9smod:star_lime",
+    "dmich9smod:star_pink",
+    "dmich9smod:star_gray",
+    "dmich9smod:star_light_gray",
+    "dmich9smod:star_cyan",
+    "dmich9smod:star_purple",
+    "dmich9smod:star_blue",
+    "dmich9smod:star_brown",
+    "dmich9smod:star_green",
+    "dmich9smod:star_red",
+    "dmich9smod:star_black"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/might_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/might_planks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/might_slab_top"
+    }
+  }
+}

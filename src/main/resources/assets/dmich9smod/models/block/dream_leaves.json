@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "dmich9smod:block/dream_leaves"
+  }
+}

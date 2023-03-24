@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/fiery_quartz_block_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/fiery_quartz_block"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/fiery_quartz_block_slab_top"
+    }
+  }
+}

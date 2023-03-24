@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "dmich9smod:might_logs"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:might_planks",
+    "count": 4
+  }
+}

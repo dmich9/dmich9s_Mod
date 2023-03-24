@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "dmich9smod:block/dream_door_top",
+    "bottom": "dmich9smod:block/dream_door_bottom"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:serendibite_block"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:serendibite",
+    "count": 9
+  }
+}

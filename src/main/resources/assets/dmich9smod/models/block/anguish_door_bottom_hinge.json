@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_rh",
+  "textures": {
+    "top": "dmich9smod:block/anguish_door_top",
+    "bottom": "dmich9smod:block/anguish_door_bottom"
+  }
+}

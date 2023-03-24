@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "dmich9smod:carnelian"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:carnelian_pickaxe"
+  }
+}

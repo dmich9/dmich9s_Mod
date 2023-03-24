@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "dmich9smod:item/strontium_pickaxe"
+  }
+}

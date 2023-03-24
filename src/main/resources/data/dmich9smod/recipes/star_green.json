@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "dmich9smod:stars"
+    },
+    "X": {
+      "item": "minecraft:green_dye"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:star_green",
+    "count": 8
+  }
+}

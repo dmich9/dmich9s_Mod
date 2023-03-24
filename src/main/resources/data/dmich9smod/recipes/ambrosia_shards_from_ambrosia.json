@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:ambrosia"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:ambrosia_shard",
+    "count": 9
+  }
+}

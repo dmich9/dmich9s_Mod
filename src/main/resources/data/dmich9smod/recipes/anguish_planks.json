@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "dmich9smod:anguish_logs"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:anguish_planks",
+    "count": 4
+  }
+}

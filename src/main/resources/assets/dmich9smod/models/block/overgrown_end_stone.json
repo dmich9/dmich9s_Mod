@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "minecraft:block/end_stone",
+    "up": "dmich9smod:block/overgrown_end_stone_top",
+    "north": "dmich9smod:block/overgrown_end_stone_side",
+    "east": "dmich9smod:block/overgrown_end_stone_side",
+    "south": "dmich9smod:block/overgrown_end_stone_side",
+    "west": "dmich9smod:block/overgrown_end_stone_side",
+    "particle": "dmich9smod:block/overgrown_end_stone_top"
+  }
+}

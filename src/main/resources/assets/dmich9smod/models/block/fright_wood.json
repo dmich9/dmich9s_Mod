@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dmich9smod:block/fright_log",
+    "side": "dmich9smod:block/fright_log"
+  }
+}

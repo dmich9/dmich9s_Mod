@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dmich9smod:serendibite_ore"
+  },
+  "result": "dmich9smod:serendibite",
+  "experience": 1.5,
+  "cookingtime": 200
+}

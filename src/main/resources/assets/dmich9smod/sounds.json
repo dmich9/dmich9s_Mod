@@ -1,0 +1,98 @@
+{
+  "groove_ride": {
+    "sounds": [
+      {
+        "name": "dmich9smod:groove_ride",
+        "stream": true
+      }
+    ]
+  },
+  "twoforty_bits": {
+    "sounds": [
+      {
+        "name": "dmich9smod:twoforty_bits",
+        "stream": true
+      }
+    ]
+  },
+  "asteroid_field": {
+    "sounds": [
+      {
+        "name": "dmich9smod:asteroid_field",
+        "stream": true
+      }
+    ]
+  },
+  "fractured_forest": {
+    "sounds": [
+      {
+        "name": "dmich9smod:fractured_forest",
+        "stream": true
+      }
+    ]
+  },
+  "dreamscape": {
+    "sounds": [
+      {
+        "name": "dmich9smod:dreamscape",
+        "stream": true
+      }
+    ]
+  },
+  "end_springs": {
+    "sounds": [
+      {
+        "name": "dmich9smod:end_springs",
+        "stream": true
+      }
+    ]
+  },
+  "mini_dungeon": {
+    "sounds": [
+      {
+        "name": "dmich9smod:mini_dungeon",
+        "stream": true
+      }
+    ]
+  },
+  "overworld_dungeon": {
+    "sounds": [
+      {
+        "name": "dmich9smod:overworld_dungeon",
+        "stream": true
+      }
+    ]
+  },
+  "nether_dungeon": {
+    "sounds": [
+      {
+        "name": "dmich9smod:nether_dungeon",
+        "stream": true
+      }
+    ]
+  },
+  "end_dungeon": {
+    "sounds": [
+      {
+        "name": "dmich9smod:end_dungeon",
+        "stream": true
+      }
+    ]
+  },
+  "boss": {
+    "sounds": [
+      {
+        "name": "dmich9smod:boss",
+        "stream": true
+      }
+    ]
+  },
+  "final_boss": {
+    "sounds": [
+      {
+        "name": "dmich9smod:final_boss",
+        "stream": true
+      }
+    ]
+  }
+}

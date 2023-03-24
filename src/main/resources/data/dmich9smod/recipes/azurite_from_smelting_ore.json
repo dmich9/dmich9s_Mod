@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dmich9smod:azurite_ore"
+  },
+  "result": "dmich9smod:azurite",
+  "experience": 1.5,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:strontium_block"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:strontium_ingot",
+    "count": 9
+  }
+}

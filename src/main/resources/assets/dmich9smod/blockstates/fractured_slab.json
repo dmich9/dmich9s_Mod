@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/fractured_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/fractured_planks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/fractured_slab_top"
+    }
+  }
+}

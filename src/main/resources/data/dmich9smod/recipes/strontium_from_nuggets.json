@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dmich9smod:strontium_nugget"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:strontium_ingot"
+  }
+}

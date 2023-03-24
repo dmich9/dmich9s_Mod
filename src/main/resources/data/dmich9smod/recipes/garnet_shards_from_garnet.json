@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:garnet"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:garnet_shard",
+    "count": 9
+  }
+}

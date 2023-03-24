@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "dmich9smod:block/dreamscape_dirt",
+    "up": "dmich9smod:block/dreamscape_grass_block_top",
+    "north": "dmich9smod:block/dreamscape_grass_block",
+    "east": "dmich9smod:block/dreamscape_grass_block",
+    "south": "dmich9smod:block/dreamscape_grass_block",
+    "west": "dmich9smod:block/dreamscape_grass_block",
+    "particle": "dmich9smod:block/dreamscape_grass_block_top"
+  }
+}

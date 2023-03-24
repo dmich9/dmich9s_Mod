@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dmich9smod:block/nether_dungeon_bricks",
+    "top": "dmich9smod:block/nether_dungeon_bricks",
+    "side": "dmich9smod:block/nether_dungeon_bricks"
+  }
+}

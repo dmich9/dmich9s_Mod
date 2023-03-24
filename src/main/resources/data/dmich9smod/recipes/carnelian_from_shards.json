@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dmich9smod:carnelian_shard"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:carnelian"
+  }
+}

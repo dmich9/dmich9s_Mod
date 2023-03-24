@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:asteroid_white",
+    "dmich9smod:asteroid_orange",
+    "dmich9smod:asteroid_magenta",
+    "dmich9smod:asteroid_light_blue",
+    "dmich9smod:asteroid_yellow",
+    "dmich9smod:asteroid_lime",
+    "dmich9smod:asteroid_pink",
+    "dmich9smod:asteroid_gray",
+    "dmich9smod:asteroid_light_gray",
+    "dmich9smod:asteroid_cyan",
+    "dmich9smod:asteroid_purple",
+    "dmich9smod:asteroid_blue",
+    "dmich9smod:asteroid_brown",
+    "dmich9smod:asteroid_green",
+    "dmich9smod:asteroid_red",
+    "dmich9smod:asteroid_black"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dmich9smod:anguish_planks"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:anguish_boat",
+    "count": 1
+  }
+}

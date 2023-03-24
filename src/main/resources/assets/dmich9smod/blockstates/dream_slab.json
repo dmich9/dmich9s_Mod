@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/dream_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/dream_planks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/dream_slab_top"
+    }
+  }
+}

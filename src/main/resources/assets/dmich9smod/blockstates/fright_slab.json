@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/fright_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/fright_planks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/fright_slab_top"
+    }
+  }
+}

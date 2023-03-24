@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "dmich9smod:nether_dungeon_bricks"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:nether_dungeon_brick_stairs",
+    "count": 6
+  }
+}

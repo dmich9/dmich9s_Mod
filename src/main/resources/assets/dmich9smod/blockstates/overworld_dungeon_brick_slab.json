@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dmich9smod:block/overworld_dungeon_brick_slab"
+    },
+    "type=double": {
+      "model": "dmich9smod:block/overworld_dungeon_bricks"
+    },
+    "type=top": {
+      "model": "dmich9smod:block/overworld_dungeon_brick_slab_top"
+    }
+  }
+}

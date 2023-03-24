@@ -1,0 +1,6 @@
+{
+  "parent": "block/button",
+  "textures": {
+    "texture": "dmich9smod:block/might_planks"
+  }
+}
