@@ -261,6 +261,7 @@
   "block.dmich9smod.overworld_dungeon_bricks_chiseled": "Chiseled Overworld Dungeon Bricks",
   "block.dmich9smod.overworld_dungeon_brick_slab": "Overworld Dungeon Brick Slab",
   "block.dmich9smod.overworld_dungeon_brick_stairs": "Overworld Dungeon Brick Stairs",
+  "item.dmich9smod.overworld_dungeon_key": "Overworld Dungeon Key",
 
   "block.dmich9smod.nether_dungeon_bricks": "Nether Dungeon Bricks",
   "block.dmich9smod.nether_dungeon_bricks_keyhole": "Keyhole Nether Dungeon Bricks",
@@ -270,6 +271,7 @@
   "block.dmich9smod.nether_dungeon_bricks_chiseled": "Chiseled Nether Dungeon Bricks",
   "block.dmich9smod.nether_dungeon_brick_slab": "Nether Dungeon Brick Slab",
   "block.dmich9smod.nether_dungeon_brick_stairs": "Nether Dungeon Brick Stairs",
+  "item.dmich9smod.nether_dungeon_key": "Nether Dungeon Key",
 
   "block.dmich9smod.end_dungeon_bricks": "End Dungeon Bricks",
   "block.dmich9smod.end_dungeon_bricks_keyhole": "Keyhole End Dungeon Bricks",
@@ -279,6 +281,7 @@
   "block.dmich9smod.end_dungeon_bricks_chiseled": "Chiseled End Dungeon Bricks",
   "block.dmich9smod.end_dungeon_brick_slab": "End Dungeon Brick Slab",
   "block.dmich9smod.end_dungeon_brick_stairs": "End Dungeon Brick Stairs",
+  "item.dmich9smod.end_dungeon_key": "End Dungeon Key",
 
   "block.dmich9smod.end_quartz_block": "End Quartz Block",
   "block.dmich9smod.end_quartz_block_stairs": "End Quartz Block Stairs",

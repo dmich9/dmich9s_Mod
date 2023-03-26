@@ -299,6 +299,13 @@ public class ModItems {
     public static final RegistryObject<Item> END_QUARTZ = ITEMS.register("end_quartz",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
+    public static final RegistryObject<Item> OVERWORLD_DUNGEON_KEY = ITEMS.register("overworld_dungeon_key",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<Item> NETHER_DUNGEON_KEY = ITEMS.register("nether_dungeon_key",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<Item> END_DUNGEON_KEY = ITEMS.register("end_dungeon_key",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+
     public static final RegistryObject<Item> ANGUISH_BOAT = ITEMS.register("anguish_boat",
             () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.ANGUISH));
     public static final RegistryObject<Item> FRIGHT_BOAT = ITEMS.register("fright_boat",

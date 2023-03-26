@@ -594,7 +594,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> OVERWORLD_DUNGEON_BRICKS_PILLAR = registerBlock("overworld_dungeon_bricks_pillar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> OVERWORLD_DUNGEON_BRICKS_chiseled = registerBlock("overworld_dungeon_bricks_chiseled",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
@@ -619,7 +619,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> NETHER_DUNGEON_BRICKS_PILLAR = registerBlock("nether_dungeon_bricks_pillar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> NETHER_DUNGEON_BRICKS_chiseled = registerBlock("nether_dungeon_bricks_chiseled",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
@@ -644,7 +644,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> END_DUNGEON_BRICKS_PILLAR = registerBlock("end_dungeon_bricks_pillar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> END_DUNGEON_BRICKS_CHISELED = registerBlock("end_dungeon_bricks_chiseled",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)

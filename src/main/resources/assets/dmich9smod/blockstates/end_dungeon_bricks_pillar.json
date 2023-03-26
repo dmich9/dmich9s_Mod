@@ -1,5 +1,16 @@
 {
   "variants": {
-    "": { "model":  "dmich9smod:block/end_dungeon_bricks_pillar"}
+    "axis=x": {
+      "model": "dmich9smod:block/end_dungeon_bricks_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "dmich9smod:block/end_dungeon_bricks_pillar"
+    },
+    "axis=z": {
+      "model": "dmich9smod:block/end_dungeon_bricks_pillar",
+      "x": 90
+    }
   }
 }

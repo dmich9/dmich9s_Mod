@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
     "side": "dmich9smod:block/end_dungeon_bricks_pillar",
     "end": "dmich9smod:block/end_dungeon_bricks_pillar_top"
