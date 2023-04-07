@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dmich9smod:block/end_torch_wall"
+    },
+    "facing=north": {
+      "model": "dmich9smod:block/end_torch_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "dmich9smod:block/end_torch_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "dmich9smod:block/end_torch_wall",
+      "y": 180
+    }
+  }
+}

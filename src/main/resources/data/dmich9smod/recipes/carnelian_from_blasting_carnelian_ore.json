@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "carnelian",
+  "ingredient": {
+    "item": "dmich9smod:carnelian_ore"
+  },
+  "result": "dmich9smod:carnelian",
+  "experience": 0.4,
+  "cookingtime": 100
+}

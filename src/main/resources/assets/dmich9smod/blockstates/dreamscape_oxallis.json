@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "dmich9smod:block/dreamscape_oxallis_bottom"
+    },
+    "half=upper": {
+      "model": "dmich9smod:block/dreamscape_oxallis_top"
+    }
+  }
+}

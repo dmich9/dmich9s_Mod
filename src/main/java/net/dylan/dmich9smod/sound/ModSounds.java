@@ -12,9 +12,6 @@ public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, dmich9sMod.MOD_ID);
 
-    public static RegistryObject<SoundEvent> GROOVE_RIDE = registerSoundEvents("groove_ride");
-    public static RegistryObject<SoundEvent> TWOFORTY_BITS = registerSoundEvents("twoforty_bits");
-
     public static RegistryObject<SoundEvent> ASTEROID_FIELD = registerSoundEvents("asteroid_field");
     public static RegistryObject<SoundEvent> FRACTURED_FOREST = registerSoundEvents("fractured_forest");
     public static RegistryObject<SoundEvent> DREAMSCAPE = registerSoundEvents("dreamscape");

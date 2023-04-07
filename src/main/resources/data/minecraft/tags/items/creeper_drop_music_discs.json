@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:asteroid_field_record",
+    "dmich9smod:fractured_forest_record",
+    "dmich9smod:dreamscape_record",
+    "dmich9smod:end_springs_record",
+    "dmich9smod:mini_dungeon_record",
+    "dmich9smod:overworld_dungeon_record",
+    "dmich9smod:nether_dungeon_record",
+    "dmich9smod:end_dungeon_record",
+    "dmich9smod:boss_record",
+    "dmich9smod:final_boss_record"
+  ]
+}

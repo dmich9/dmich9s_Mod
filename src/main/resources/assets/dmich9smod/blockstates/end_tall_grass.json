@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "dmich9smod:block/end_tall_grass_bottom"
+    },
+    "half=upper": {
+      "model": "dmich9smod:block/end_tall_grass_top"
+    }
+  }
+}

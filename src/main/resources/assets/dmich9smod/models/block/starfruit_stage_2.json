@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dmich9smod:block/starfruit_stage_2"
+  }
+}

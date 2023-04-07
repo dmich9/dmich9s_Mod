@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:end_torch",
+    "dmich9smod:end_torch_wall",
+    "dmich9smod:nether_torch",
+    "dmich9smod:nether_torch_wall"
+  ]
+}

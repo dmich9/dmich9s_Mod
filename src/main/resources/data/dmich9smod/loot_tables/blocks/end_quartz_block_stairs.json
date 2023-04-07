@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dmich9smod:end_quartz_block_stairs"
+        }
+      ]
+    }
+  ]
+}

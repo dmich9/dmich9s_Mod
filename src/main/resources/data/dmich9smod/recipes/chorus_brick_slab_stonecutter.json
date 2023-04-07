@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:chorus_bricks"
+  },
+  "result": "dmich9smod:chorus_brick_slab",
+  "count": 2
+}

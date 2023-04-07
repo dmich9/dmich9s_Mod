@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "end_quartz",
+  "ingredient": {
+    "item": "dmich9smod:end_quartz_ore"
+  },
+  "result": "dmich9smod:end_quartz",
+  "experience": 0.7,
+  "cookingtime": 100
+}

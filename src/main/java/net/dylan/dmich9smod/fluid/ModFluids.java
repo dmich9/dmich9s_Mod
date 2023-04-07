@@ -1,7 +1,6 @@
 package net.dylan.dmich9smod.fluid;
 import net.dylan.dmich9smod.dmich9sMod;
-import net.dylan.dmich9smod.block.ModBlocks;
-import net.dylan.dmich9smod.item.ModItems;
+import net.dylan.dmich9smod.block.ModBlocksAndItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -31,17 +30,16 @@ public class ModFluids {
     public static final RegistryObject<FlowingFluid> SPRING_WATER_FLOWING
             = FLUIDS.register("spring_water_flowing", () -> new ForgeFlowingFluid.Flowing(ModFluids.SPRING_WATER_PROPERTIES));
 
-
     public static final ForgeFlowingFluid.Properties SPRING_WATER_PROPERTIES = new ForgeFlowingFluid.Properties(
-            SPRING_WATER_FLUID, SPRING_WATER_FLOWING, FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-            .density(15).luminosity(2).viscosity(5).sound(SoundEvents.HONEY_DRINK).overlay(WATER_OVERLAY_RL)
-            .color(0x14fff3)).slopeFindDistance(2).levelDecreasePerBlock(2)
-            .block(ModFluids.SPRING_BLOCK).bucket(ModItems.SPRING_WATER_BUCKET);
+            () -> SPRING_WATER_FLUID.get(), () -> SPRING_WATER_FLOWING.get(), FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
+            .density(15).luminosity(2).viscosity(5).sound(SoundEvents.WATER_AMBIENT).overlay(WATER_OVERLAY_RL)
+            .color(0xff34c1da)).slopeFindDistance(2).levelDecreasePerBlock(2)
+            .block(() -> ModFluids.SPRING_BLOCK.get()).bucket(() -> ModBlocksAndItems.SPRING_WATER_BUCKET.get());
 
-    public static final RegistryObject<LiquidBlock> SPRING_BLOCK = ModBlocks.BLOCKS.register("spring",
-            () -> new LiquidBlock(ModFluids.SPRING_WATER_FLUID, BlockBehaviour.Properties.of(Material.WATER)
+    public static final RegistryObject<LiquidBlock> SPRING_BLOCK = ModBlocksAndItems.BLOCKS.register("spring",
+            () -> new LiquidBlock(() -> ModFluids.SPRING_WATER_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noCollission().strength(100f).noDrops()));
-    //FlowingFluidBlock
+
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }

@@ -1,7 +1,7 @@
 package net.dylan.dmich9smod.entity.custom;
 
+import net.dylan.dmich9smod.block.ModBlocksAndItems;
 import net.dylan.dmich9smod.entity.ModEntityTypes;
-import net.dylan.dmich9smod.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -49,17 +49,17 @@ public class ModBoatEntity extends Boat {
     public Item getDropItem() {
         switch (this.getModBoatType()) {
             case ANGUISH:
-                return ModItems.ANGUISH_BOAT.get();
+                return ModBlocksAndItems.ANGUISH_BOAT.get();
             case FRIGHT:
-                return ModItems.FRIGHT_BOAT.get();
+                return ModBlocksAndItems.FRIGHT_BOAT.get();
             case MIGHT:
-                return ModItems.MIGHT_BOAT.get();
+                return ModBlocksAndItems.MIGHT_BOAT.get();
             case DREAM:
-                return ModItems.DREAM_BOAT.get();
+                return ModBlocksAndItems.DREAM_BOAT.get();
             case FRACTURED:
-                return ModItems.FRACTURED_BOAT.get();
+                return ModBlocksAndItems.FRACTURED_BOAT.get();
             case MAPLE:
-                return ModItems.MAPLE_BOAT.get();
+                return ModBlocksAndItems.MAPLE_BOAT.get();
             default:
                 return Items.OAK_BOAT;
         }

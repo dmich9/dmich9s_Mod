@@ -1,15 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dmich9smod:azurite_block",
-    "dmich9smod:azurite_ore",
-    "dmich9smod:carnelian_block",
-    "dmich9smod:carnelian_ore",
-    "dmich9smod:garnet_block",
-    "dmich9smod:garnet_ore",
-    "dmich9smod:serendibite_block",
-    "dmich9smod:serendibite_ore",
-    "dmich9smod:strontium_block",
-    "dmich9smod:strontium_ore"
+    "#dmich9smod:carnelian_ores",
+    "#dmich9smod:strontium_ores",
+    "#dmich9smod:garnet_ores"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:end_quartz_block"
+  },
+  "result": "dmich9smod:end_quartz_block_stairs",
+  "count": 1
+}

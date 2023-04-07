@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dmich9smod:dragonfruit"
+    }
+  ],
+  "result": {
+    "item": "dmich9smod:dragonfruit_seeds"
+  }
+}

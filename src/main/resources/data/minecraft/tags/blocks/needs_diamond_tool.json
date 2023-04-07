@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-
+    "#dmich9smod:dungeon_concrete",
+    "#dmich9smod:overworld_dungeon_bricks",
+    "#dmich9smod:nether_dungeon_bricks",
+    "#dmich9smod:end_dungeon_bricks",
+    "#dmich9smod:azurite_ores",
+    "#dmich9smod:serendibite_ores",
+    "#dmich9smod:ambrosia_ores"
   ]
 }

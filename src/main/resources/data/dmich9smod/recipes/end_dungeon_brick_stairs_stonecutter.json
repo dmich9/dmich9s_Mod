@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:end_dungeon_bricks"
+  },
+  "result": "dmich9smod:end_dungeon_brick_stairs",
+  "count": 1
+}

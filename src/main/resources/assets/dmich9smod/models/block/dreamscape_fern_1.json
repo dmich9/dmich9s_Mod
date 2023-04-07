@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "dmich9smod:block/dreamscape_fern_1"
-  }
-}

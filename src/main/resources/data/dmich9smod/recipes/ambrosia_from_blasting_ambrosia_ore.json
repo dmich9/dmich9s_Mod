@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "ambrosia",
+  "ingredient": {
+    "item": "dmich9smod:ambrosia_ore"
+  },
+  "result": "dmich9smod:ambrosia",
+  "experience": 2.5,
+  "cookingtime": 100
+}

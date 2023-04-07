@@ -15,7 +15,7 @@
                   "condition": "minecraft:block_state_property",
                   "block": "dmich9smod:dragonfruit_crop",
                   "properties": {
-                    "age": "7"
+                    "age": "3"
                   }
                 }
               ],
@@ -54,7 +54,7 @@
           "condition": "minecraft:block_state_property",
           "block": "dmich9smod:dragonfruit_crop",
           "properties": {
-            "age": "7"
+            "age": "3"
           }
         }
       ]

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:nether_dungeon_bricks"
+  },
+  "result": "dmich9smod:nether_dungeon_brick_slab",
+  "count": 2
+}

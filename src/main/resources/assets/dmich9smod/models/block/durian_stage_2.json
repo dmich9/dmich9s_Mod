@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dmich9smod:block/durian_stage_2"
+  }
+}

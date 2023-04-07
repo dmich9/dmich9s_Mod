@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dmich9smod:end_dungeon_bricks"
+  },
+  "result": "dmich9smod:end_dungeon_bricks_cracked",
+  "experience": 0.5,
+  "cookingtime": 200
+}

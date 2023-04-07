@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:end_quartz_block",
+    "dmich9smod:end_quartz_block_stairs",
+    "dmich9smod:end_quartz_block_slab",
+    "dmich9smod:end_quartz_block_pillar",
+    "dmich9smod:end_quartz_block_chiseled",
+    "dmich9smod:end_quartz_ore"
+  ]
+}

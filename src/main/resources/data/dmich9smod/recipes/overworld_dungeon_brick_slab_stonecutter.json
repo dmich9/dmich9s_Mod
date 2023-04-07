@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:overworld_dungeon_bricks"
+  },
+  "result": "dmich9smod:overworld_dungeon_brick_slab",
+  "count": 2
+}

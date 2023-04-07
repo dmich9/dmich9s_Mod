@@ -1,20 +1,4 @@
 {
-  "groove_ride": {
-    "sounds": [
-      {
-        "name": "dmich9smod:groove_ride",
-        "stream": true
-      }
-    ]
-  },
-  "twoforty_bits": {
-    "sounds": [
-      {
-        "name": "dmich9smod:twoforty_bits",
-        "stream": true
-      }
-    ]
-  },
   "asteroid_field": {
     "sounds": [
       {

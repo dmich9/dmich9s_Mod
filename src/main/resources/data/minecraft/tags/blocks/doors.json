@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:anguish_door",
+    "dmich9smod:fright_door",
+    "dmich9smod:might_door",
+    "dmich9smod:dream_door",
+    "dmich9smod:fractured_door",
+    "dmich9smod:maple_door"
+  ]
+}

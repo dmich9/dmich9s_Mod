@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "fiery_quartz",
+  "ingredient": {
+    "item": "dmich9smod:fiery_quartz_ore"
+  },
+  "result": "dmich9smod:fiery_quartz",
+  "experience": 0.4,
+  "cookingtime": 200
+}

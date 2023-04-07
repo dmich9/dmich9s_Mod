@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "dmich9smod:overworld_dungeon_bricks",
+    "dmich9smod:overworld_dungeon_brick_stairs",
+    "dmich9smod:overworld_dungeon_brick_slab",
+    "dmich9smod:overworld_dungeon_bricks_pillar",
+    "dmich9smod:overworld_dungeon_bricks_chiseled",
+    "dmich9smod:overworld_dungeon_bricks_keyhole",
+    "dmich9smod:overworld_dungeon_bricks_keyed",
+    "dmich9smod:overworld_dungeon_bricks_cracked"
+  ]
+}

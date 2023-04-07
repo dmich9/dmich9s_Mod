@@ -1,4 +1,5 @@
 package net.dylan.dmich9smod.item;
+import net.dylan.dmich9smod.block.ModBlocksAndItems;
 import net.dylan.dmich9smod.dmich9sMod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -11,17 +12,17 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     CARNELIAN("carnelian", 6, new int[]{1, 2, 4, 2}, 16,
-            SoundEvents.ARMOR_EQUIP_GOLD, 0F, 0.0F, () -> Ingredient.of(ModItems.CARNELIAN.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 0F, 0.0F, () -> Ingredient.of(ModBlocksAndItems.CARNELIAN.get())),
     STRONTIUM("strontium", 12, new int[]{1, 3, 5, 2}, 16,
-            SoundEvents.ARMOR_EQUIP_GOLD, 0F, 0.0F, () -> Ingredient.of(ModItems.STRONTIUM_INGOT.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 0F, 0.0F, () -> Ingredient.of(ModBlocksAndItems.STRONTIUM_INGOT.get())),
     GARNET("garnet", 24, new int[]{2, 5, 7, 2}, 12,
-            SoundEvents.ARMOR_EQUIP_GOLD, 1F, 0.0F, () -> Ingredient.of(ModItems.GARNET.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 1F, 0.0F, () -> Ingredient.of(ModBlocksAndItems.GARNET.get())),
     AZURITE("azurite", 35, new int[]{3, 6, 8, 3}, 30,
-            SoundEvents.ARMOR_EQUIP_GOLD, 2.5F, 0.0F, () -> Ingredient.of(ModItems.AZURITE.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 2.5F, 0.0F, () -> Ingredient.of(ModBlocksAndItems.AZURITE.get())),
     SERENDIBITE("serendibite", 55, new int[]{4, 7, 9, 4}, 15,
-            SoundEvents.ARMOR_EQUIP_GOLD, 1.5F, 0.5F, () -> Ingredient.of(ModItems.SERENDIBITE.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 1.5F, 0.5F, () -> Ingredient.of(ModBlocksAndItems.SERENDIBITE.get())),
     AMBROSIA("ambrosia", 44, new int[]{5, 8, 10, 5}, 25,
-            SoundEvents.ARMOR_EQUIP_GOLD, 4F, 0.3F, () -> Ingredient.of(ModItems.AMBROSIA.get()));
+            SoundEvents.ARMOR_EQUIP_GOLD, 4F, 0.3F, () -> Ingredient.of(ModBlocksAndItems.AMBROSIA.get()));
 
 
 

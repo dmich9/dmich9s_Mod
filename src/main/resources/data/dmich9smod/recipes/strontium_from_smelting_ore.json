@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "dmich9smod:strontium_ore"
-  },
-  "result": "dmich9smod:strontium_ingot",
-  "experience": 1.5,
-  "cookingtime": 200
-}
