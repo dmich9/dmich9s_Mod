@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dmich9smod:fractured_tree_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1291014467,
+    "spacing": 16,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

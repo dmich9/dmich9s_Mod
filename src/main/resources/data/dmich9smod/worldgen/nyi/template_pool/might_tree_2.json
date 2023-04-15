@@ -1,0 +1,15 @@
+{
+  "name": "overworld_structures:might_tree_2",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "dmich9smod:might_tree_2",
+        "processors": "dmich9smod:randomize_stonebrick",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

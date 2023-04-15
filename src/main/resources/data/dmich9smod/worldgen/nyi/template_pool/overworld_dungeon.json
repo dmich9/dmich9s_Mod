@@ -1,0 +1,15 @@
+{
+  "name": "overworld_structures:overworld_dungeon",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "dmich9smod:overworld_dungeon",
+        "processors": "dmich9smod:randomize_stonebrick",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

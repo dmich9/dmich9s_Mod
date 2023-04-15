@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dmich9smod:orange_maple_tree_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1207933079,
+    "spacing": 16,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

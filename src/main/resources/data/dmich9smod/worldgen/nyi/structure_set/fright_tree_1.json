@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dmich9smod:fright_tree_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1552857270,
+    "spacing": 16,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

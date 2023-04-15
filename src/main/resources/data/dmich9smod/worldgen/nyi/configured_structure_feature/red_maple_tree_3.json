@@ -1,0 +1,28 @@
+{
+  "type": "dmich9smod:red_maple_tree_3",
+  "config": {
+    "start_pool": "dmich9smod:red_maple_tree_3",
+    "size": 1
+  },
+  "biomes": "#dmich9smod:has_structure/red_maple_tree_3_biomes",
+  "adapt_noise": false,
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "minecraft:zombie",
+          "weight": 1,
+          "minCount": 1,
+          "maxCount": 1
+        },
+        {
+          "type": "minecraft:skeleton",
+          "weight": 1,
+          "minCount": 1,
+          "maxCount": 1
+        }
+      ]
+        }
+    }
+}

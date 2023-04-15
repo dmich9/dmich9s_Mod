@@ -332,7 +332,23 @@
   "block.dmich9smod.starfruit_crop": "Starfruit Crop",
   "item.dmich9smod.starfruit_seeds": "Starfruit Seeds",
   "item.dmich9smod.starfruit": "Starfruit",
+
   "fluid.dmich9smod.spring_water_fluid": "Spring Water",
+  "effect.dmich9smod.stranded": "Stranded",
+  "item.minecraft.potion.effect.stranded_potion": "Stranded Potion",
+  "item.minecraft.splash_potion.effect.stranded_potion": "Splash Potion of Stranded",
+  "item.minecraft.lingering_potion.effect.stranded_potion": "Lingering Potion of Stranded",
+  "item.minecraft.tipped_arrow.effect.stranded_potion": "Arrow of Stranded",
+  "effect.dmich9smod.prosperity": "Prosperity",
+  "item.minecraft.potion.effect.prosperity_potion": "Prosperity Potion",
+  "item.minecraft.splash_potion.effect.prosperity_potion": "Splash Potion of Prosperity",
+  "item.minecraft.lingering_potion.effect.prosperity_potion": "Lingering Potion of Prosperity",
+  "item.minecraft.tipped_arrow.effect.prosperity_potion": "Arrow of Prosperity",
+  "effect.dmich9smod.fury": "Fury",
+  "item.minecraft.potion.effect.fury_potion": "Fury Potion",
+  "item.minecraft.splash_potion.effect.fury_potion": "Splash Potion of Fury",
+  "item.minecraft.lingering_potion.effect.fury_potion": "Lingering Potion of Fury",
+  "item.minecraft.tipped_arrow.effect.fury_potion": "Arrow of Fury",
   "itemGroup.coursemodtab": "dmich9's Mod"
 
 }
