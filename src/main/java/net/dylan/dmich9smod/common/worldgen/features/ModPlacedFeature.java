@@ -7,7 +7,16 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import static net.minecraft.data.worldgen.placement.VegetationPlacements.worldSurfaceSquaredWithCount;
 
+
 public class ModPlacedFeature {
+
+    /**
+     * ModConfiguredFeatures made the Features but the ModPlacedFeature class (this class) does something with the features and actually places them;
+     * How features get placed depend on which feature, the trees, patches of grass and flowers all three have different ways that they get generated;
+     * As always, heavily suggest playing with the numbers so you get comfortable biomes that look like you want them to look;
+     */
+
+    // TREES
     public static final Holder<PlacedFeature> DREAM_PLACED = PlacementUtils.register("dream_placed",
             ModConfiguredFeature.DREAM_SPAWN, VegetationPlacements.treePlacement(
                     PlacementUtils.countExtra(1, 0.1f, 5)
@@ -38,11 +47,13 @@ public class ModPlacedFeature {
                     PlacementUtils.countExtra(1, 0.1f, 5)
             ));
 
+    // GRASS
     public static final Holder<PlacedFeature> DREAMGRASS_PLACED = PlacementUtils.register("patch_dream_grass",
             ModConfiguredFeature.PATCH_GRASS_DREAM, worldSurfaceSquaredWithCount(2));
     public static final Holder<PlacedFeature> DREAMGRASS_TALL_PLACED = PlacementUtils.register("patch_tall_dream_grass",
             ModConfiguredFeature.PATCH_TALLGRASS_DREAM, worldSurfaceSquaredWithCount(1));
 
+    // FLOWERS
     public static final Holder<PlacedFeature> DREAMSCAPE_FERN = PlacementUtils.register("dreamscape_fern",
             ModConfiguredFeature.DREAMSCAPE_FERN, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     public static final Holder<PlacedFeature> DREAMSCAPE_BUCKWEED = PlacementUtils.register("dreamscape_buckweed",

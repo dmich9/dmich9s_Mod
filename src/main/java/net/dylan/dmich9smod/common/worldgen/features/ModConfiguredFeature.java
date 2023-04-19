@@ -26,6 +26,13 @@ import java.util.List;
 
 public class ModConfiguredFeature {
 
+    /**
+     * This code makes "features" or things to use for the generation of the biome;
+     * Everything what a biome has (outside of structures) is made here and the code can be replicated;
+     * Always test out the numbers to be comfortable with how many and in what way they get spawned
+     */
+
+    // FLOWERS -> the flowers have another way of spawning than the (tall) grass, you can replicate the code and just change blocks for other flowers or change numbers for other probabilities;
     // DREAM FERN
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DREAMSCAPE_FERN =
             FeatureUtils.register("dreamscape_fern", Feature.FLOWER,
@@ -49,7 +56,7 @@ public class ModConfiguredFeature {
 
 
 
-
+    // this code is pretty much copy pasted from vanilla to generate patches of grass
     private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int pTries) {
         return FeatureUtils.simpleRandomPatchConfiguration(pTries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
     }
@@ -59,7 +66,11 @@ public class ModConfiguredFeature {
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALLGRASS_DREAM =
             FeatureUtils.register("patch_tallgrass_dream", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(ModBlocksAndItems.DREAMSCAPE_TALL_GRASS.get()), 32));
 
-
+    /**
+     * There is some code added for the trees outside of the tree code
+     * Mostly like the flower, code needed for the trees to generate, this is code specifically made to generate the trees;
+     * As always, you can modify the numbers to make the trees look more customisable;
+     */
 
     // FULL ANGUISH TREE
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> ANGUISH_TREE =

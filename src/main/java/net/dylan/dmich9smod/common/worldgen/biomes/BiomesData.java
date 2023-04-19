@@ -7,6 +7,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 
 public class BiomesData {
+    // this class only registers the custom biomes
+
 
     public static final ResourceKey<Biome> DREAMSCAPE = register("dreamscape");
     public static final ResourceKey<Biome> MAPLE_FOREST = register("maple_forest");

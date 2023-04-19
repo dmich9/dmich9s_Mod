@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class CustomEffectItem extends Item {
+    // this class is a simple class that can be extended to make any custom item give an effect to the player while hold in the inventory
     private final MobEffectInstance effectInstance;
 
     public CustomEffectItem(Properties properties, MobEffectInstance effectInstance) {

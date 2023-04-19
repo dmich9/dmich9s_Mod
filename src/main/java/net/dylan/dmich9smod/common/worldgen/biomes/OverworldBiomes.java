@@ -11,7 +11,9 @@ import net.minecraft.world.level.biome.*;
 import javax.annotation.Nullable;
 
 public class OverworldBiomes {
+    // this class is the biome make where everything is made for the biome (outside of generation)
 
+    // all the music is registered here
     @Nullable
     private static final Music NORMAL_MUSIC = null;
     private static final Music DREAMSCAPE_MUSIC = new Music(ModSounds.DREAMSCAPE.get(), 12000, 24000, true);
@@ -23,11 +25,11 @@ public class OverworldBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
+    // these biome methods are overloaded, they handle pretty much the basics and depends on how much custom the user needs in their biome
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return biome(precipitation, category, temperature, downfall, 4159204, 329011, spawnBuilder, biomeBuilder, music);
     }
-
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return (new Biome.BiomeBuilder()).precipitation(precipitation)
@@ -43,7 +45,6 @@ public class OverworldBiomes {
                 .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(biomeBuilder.build()).build();
     }
-
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, int skyColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return (new Biome.BiomeBuilder()).precipitation(precipitation)
@@ -59,7 +60,6 @@ public class OverworldBiomes {
                         .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(biomeBuilder.build()).build();
     }
-
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, int skyColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return (new Biome.BiomeBuilder()).precipitation(precipitation)
@@ -77,6 +77,7 @@ public class OverworldBiomes {
                 .generationSettings(biomeBuilder.build()).build();
     }
 
+    // using this method to quickly add all the default settings for a biome
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
     {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
@@ -87,13 +88,24 @@ public class OverworldBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
+    // this is the maple forest, very basic and does nothing special; most of the code for this biome happens in the tree generation class
     public static Biome mapleForest()
     {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.NONE, 1.0F, 0.0F, 14204888, 14204888, 14524637, 14204888, spawnBuilder, biomeBuilder, DREAMSCAPE_MUSIC);
+        return biome(Biome.Precipitation.RAIN,
+                Biome.BiomeCategory.NONE,
+                1.0F,
+                0.0F,
+                14204888,
+                14204888,
+                14524637,
+                14204888,
+                spawnBuilder, biomeBuilder,
+                DREAMSCAPE_MUSIC);
     }
 
+    // this is the dreamscape biome; adds all possible spawns to this biome
     public static Biome dreamscape()
     {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
@@ -107,6 +119,13 @@ public class OverworldBiomes {
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
 
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.NONE, 1.0F, 0.0F, 4445678, 270131, 16733525, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+        return biome(Biome.Precipitation.RAIN,
+                Biome.BiomeCategory.NONE,
+                1.0F,
+                0.0F,
+                4445678,
+                270131, 16733525,
+                spawnBuilder, biomeBuilder,
+                NORMAL_MUSIC);
     }
 }

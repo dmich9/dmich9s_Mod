@@ -15,13 +15,11 @@ import java.util.Set;
 
 public class ModTreeGeneration {
     public static void generateTrees(final BiomeLoadingEvent event)
+            // this method actually generate the trees
     {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
-        //System.out.println(types);
-        //System.out.println(event.getName());
-        //System.out.println(BiomesData.DREAMSCAPE.getRegistryName());
-        if (event.getName().toString().equals("dmich9smod:dreamscape"))
+        if (event.getName().toString().equals("dmich9smod:dreamscape")) // -> this line has to be like that or else it won't generate like this; just change the name of this with the registry name of your biome
         {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
@@ -32,7 +30,7 @@ public class ModTreeGeneration {
             base.add(ModPlacedFeature.MIGHT_PLACED);
 
         }
-        else if (event.getName().toString().equals("dmich9smod:maple_forest"))
+        else if (event.getName().toString().equals("dmich9smod:maple_forest"))// -> this line has to be like that or else it won't generate like this; just change the name of this with the registry name of your biome
         {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
