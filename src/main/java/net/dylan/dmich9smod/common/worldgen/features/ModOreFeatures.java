@@ -1,4 +1,4 @@
-package net.dylan.dmich9smod.common.worldgen;
+package net.dylan.dmich9smod.common.worldgen.features;
 
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
 import net.minecraft.core.Holder;
