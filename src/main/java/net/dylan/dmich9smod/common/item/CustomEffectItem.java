@@ -2,7 +2,6 @@ package net.dylan.dmich9smod.common.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -10,11 +9,11 @@ import net.minecraft.world.level.Level;
 
 public class CustomEffectItem extends Item {
     // this class is a simple class that can be extended to make any custom item give an effect to the player while hold in the inventory
-    private final MobEffectInstance effectInstance;
+    private MobEffectInstance effectInstance;
 
-    public CustomEffectItem(Properties properties, MobEffectInstance effectInstance) {
+    public CustomEffectItem(Properties properties) {
         super(properties);
-        this.effectInstance = effectInstance;
+
     }
 
     // Override this method to apply the effect when the item is in the player's inventory
@@ -26,4 +25,12 @@ public class CustomEffectItem extends Item {
         }
     }
 
+    public void setEffectInstance(MobEffectInstance mobEffectInstance)
+    {
+        this.effectInstance = mobEffectInstance;
+    }
+    public MobEffectInstance getEffectInstance()
+    {
+        return this.effectInstance;
+    }
 }

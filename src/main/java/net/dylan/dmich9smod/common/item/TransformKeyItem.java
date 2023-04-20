@@ -35,11 +35,11 @@ public class TransformKeyItem extends Item {
         BlockState state = world.getBlockState(pos);
         Player player = context.getPlayer();
         ItemStack stack = context.getItemInHand();
-        if (!player.isCreative()) {
-            stack.shrink(1);
-        }
 
         if (state.getBlock() == targetBlock) {
+            if (!player.isCreative()) {
+                stack.shrink(1);
+            }
             world.setBlock(pos, resultBlock.defaultBlockState(), Block.UPDATE_NONE);
             // the sound can be changed; further customized even so you can choose the sound
             world.playSound(player, pos, SoundEvents.STONE_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);

@@ -37,18 +37,17 @@ public class dmich9sMod
     public dmich9sMod()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModEffects.MOB_EFFECTS.register(eventBus);
+        ModPotions.register(eventBus);
+        ModParticles.register(eventBus);
 
-        ModBlocksAndItems.register(eventBus);
         ModFluids.register(eventBus);
         ModSounds.register(eventBus);
         ModPaintings.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModEntityTypes.register(eventBus);
         //ModStructures.register(eventBus);
-        ModParticles.register(eventBus);
-        ModEffects.register(eventBus);
-        ModPotions.register(eventBus);
-
+        ModBlocksAndItems.register(eventBus);
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
         MinecraftForge.EVENT_BUS.register(this);
