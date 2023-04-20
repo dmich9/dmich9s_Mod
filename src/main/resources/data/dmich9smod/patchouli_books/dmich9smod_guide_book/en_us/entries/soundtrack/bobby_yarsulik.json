@@ -1,0 +1,16 @@
+{
+  "name": "Bobby Yarsulik",
+  "icon": "minecraft:jukebox",
+  "category": "dmich9smod:soundtrack",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The soundtrack for this mod was composed by Bobby Yarsulik. I've linked his youtube channel. Go check him out!"
+    },
+    {
+      "type": "patchouli:link",
+      "url": "https://www.youtube.com/channel/UCT15Whb1wFyd4g4qrQ_3s6Q",
+      "link_text": "BSlick Youtube"
+    }
+  ]
+}

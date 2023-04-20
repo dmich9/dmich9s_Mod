@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dmich9smod:dungeon_concrete"
+  },
+  "result": "dmich9smod:dungeon_concrete_pillar",
+  "count": 1
+}

@@ -1,4 +1,5 @@
-package net.dylan.dmich9smod.common.worldgen;
+package net.dylan.dmich9smod.common.worldgen.generation;
+import net.dylan.dmich9smod.common.worldgen.ModOrePlacement;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;

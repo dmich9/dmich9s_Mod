@@ -1,0 +1,16 @@
+{
+  "name": "Dreamer's Fright",
+  "icon": "dmich9smod:dreamers_fright",
+  "category": "dmich9smod:charms",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This charm applies the 'Speed' status effect when in the player's inventory."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:dreamers_fright",
+      "title": "Dreamer's Fright"
+    }
+  ]
+}

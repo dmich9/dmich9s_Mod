@@ -1,0 +1,11 @@
+{
+  "name": "Prosperity",
+  "icon": "dmich9smod:prosperity",
+  "category": "dmich9smod:effects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This effect increases the xp gained by doing any tasks by 1.5x."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "dmich9smod:durian"},
+    {"item": "minecraft:sugar"},
+    {"item": "minecraft:snowball"}
+  ],
+  "result": {
+    "item": "dmich9smod:durian_ice_cream"
+  }
+}

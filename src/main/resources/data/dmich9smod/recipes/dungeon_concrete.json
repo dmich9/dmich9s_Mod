@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#",
+    "XSX",
+    "#X#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:white_concrete"
+    },
+    "X": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "minecraft:green_dye"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:dungeon_concrete",
+    "count": 8
+  }
+}

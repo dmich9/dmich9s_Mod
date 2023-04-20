@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#",
+    "XSX",
+    "#X#"
+  ],
+  "key": {
+    "#": {
+      "item": "dmich9smod:anguish_shard"
+    },
+    "S": {
+      "item": "dmich9smod:ambrosia"
+    },
+    "X": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:dreamers_anguish"
+  }
+}

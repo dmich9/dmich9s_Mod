@@ -1,5 +1,6 @@
 package net.dylan.dmich9smod.common.worldgen;
 
+import net.dylan.dmich9smod.common.worldgen.features.ModOreFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.VerticalAnchor;

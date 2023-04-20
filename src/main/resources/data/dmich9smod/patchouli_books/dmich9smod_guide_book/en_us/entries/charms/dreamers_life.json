@@ -1,0 +1,16 @@
+{
+  "name": "Dreamer's Life",
+  "icon": "dmich9smod:dreamers_life",
+  "category": "dmich9smod:charms",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This charm applies the 'Prosperity' status effect when in the player's inventory."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:dreamers_life",
+      "title": "Dreamer's Life"
+    }
+  ]
+}

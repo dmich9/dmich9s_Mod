@@ -1,0 +1,31 @@
+{
+  "name": "Azurite Armor",
+  "icon": "dmich9smod:azurite_chestplate",
+  "category": "dmich9smod:armor",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This set is in between diamond and netherite. It has great durability and the best enchantment in the game, but lower protection. From bottom to top, the protection values are 3,6,8,3. This set has an enchantibility of 30."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:azurite_helmet",
+      "title": "Azurite Helm"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:azurite_chestplate",
+      "title": "Azurite Chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:azurite_leggings",
+      "title": "Azurite Chausses"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:azurite_boots",
+      "title": "Azurite Boots"
+    }
+  ]
+}

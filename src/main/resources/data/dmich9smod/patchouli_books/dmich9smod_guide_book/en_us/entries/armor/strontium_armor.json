@@ -1,0 +1,31 @@
+{
+  "name": "Strontium Armor",
+  "icon": "dmich9smod:strontium_chestplate",
+  "category": "dmich9smod:armor",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This set of armor is similar to iron, but with better enchantibility for the tradeoff of slightly lower durability. From bottom to top, the protection values are 1,3,5,2. This set has an enchantibility of 16."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:strontium_helmet",
+      "title": "Strontium Helm"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:strontium_chestplate",
+      "title": "Strontium Chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:strontium_leggings",
+      "title": "Strontium Chausses"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:strontium_boots",
+      "title": "Strontium Boots"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dmich9smod:raw_suspicious_meat"
+  },
+  "result": "dmich9smod:cooked_suspicious_meat",
+  "experience": 0.45,
+  "cookingtime": 200
+}

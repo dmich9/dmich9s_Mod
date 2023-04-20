@@ -1,0 +1,31 @@
+{
+  "name": "Serendibite Armor",
+  "icon": "dmich9smod:serendibite_chestplate",
+  "category": "dmich9smod:armor",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This set is slightly stronger than netherite, but weaker than ambrosia. From bottom to top, the protection values are 4,7,9,4. This set has an enchantibility of 15."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:serendibite_helmet",
+      "title": "Serendibite Helm"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:serendibite_chestplate",
+      "title": "Serendibite Chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:serendibite_leggings",
+      "title": "Serendibite Chausses"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:serendibite_boots",
+      "title": "Serendibite Boots"
+    }
+  ]
+}

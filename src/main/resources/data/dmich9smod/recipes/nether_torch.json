@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "dmich9smod:fiery_quartz"},
+    {"item": "minecraft:stick"},
+    {"item": "minecraft:coal"}
+  ],
+  "result": {
+    "item": "dmich9smod:nether_torch_item",
+    "count": 4
+  }
+}

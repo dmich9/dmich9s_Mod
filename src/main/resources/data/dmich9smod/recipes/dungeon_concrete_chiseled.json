@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "dmich9smod:dungeon_concrete"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:dungeon_concrete_chiseled",
+    "count": 4
+  }
+}
