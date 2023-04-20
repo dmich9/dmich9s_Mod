@@ -23,22 +23,22 @@ public class ModOreFeatures {
 
     public static final List<OreConfiguration.TargetBlockState> ORE_CARNELIAN_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.CARNELIAN_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_CARNELIAN_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_CARNELIAN_ORE.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> ORE_STRONTIUM_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.STRONTIUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_STRONTIUM_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_STRONTIUM_ORE.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> ORE_GARNET_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.GARNET_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_GARNET_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_GARNET_ORE.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> ORE_AZURITE_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.AZURITE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_AZURITE_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_AZURITE_ORE.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> ORE_SERENDIBITE_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.SERENDIBITE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_SERENDIBITE_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_SERENDIBITE_ORE.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> ORE_AMBROSIA_TARGET_LIST =
             List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocksAndItems.AMBROSIA_ORE.get().defaultBlockState()),
-            OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_AMBROSIA_ORE.get().defaultBlockState()));
+                    OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocksAndItems.DEEPSLATE_AMBROSIA_ORE.get().defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> CARNELIAN_ORE = FeatureUtils.register("carnelian_ore",
             Feature.ORE, new OreConfiguration(ORE_CARNELIAN_TARGET_LIST, 9));

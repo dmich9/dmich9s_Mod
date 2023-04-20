@@ -22,6 +22,5 @@ public class WorldGenEvents {
             throw new IllegalStateException("Failed to find biome: " + resourceLocation);
         }
     }
-
      */
 }

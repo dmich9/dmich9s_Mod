@@ -1,15 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X",
-    "X"
+    "#X#",
+    "X X",
+    "#X#"
   ],
   "key": {
+    "#": {
+      "item": "minecraft:stone_bricks"
+    },
     "X": {
-      "item": "dmich9smod:end_dungeon_brick_slab"
+      "item": "minecraft:chorus_fruit"
     }
   },
   "result": {
-    "item": "dmich9smod:end_dungeon_bricks"
+    "item": "dmich9smod:chorus_bricks",
+    "count": 4
   }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "dmich9smod:end_quartz"},
+    {"item": "minecraft:stick"},
+    {"item": "minecraft:coal"}
+  ],
+  "result": {
+    "item": "dmich9smod:end_torch_item",
+    "count": 4
+  }
+}

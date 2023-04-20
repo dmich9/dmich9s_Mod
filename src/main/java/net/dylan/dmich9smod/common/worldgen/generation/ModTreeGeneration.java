@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class ModTreeGeneration {
     public static void generateTrees(final BiomeLoadingEvent event)
-            // this method actually generate the trees
+    // this method actually generate the trees
     {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);

@@ -27,7 +27,7 @@ public class TransformKeyItem extends Item {
         this.resultBlock = resultBlock;
     }
 
-    // this method makes it so the right clicked appropriate block becomes another block
+    // this method makes it so the right-clicked appropriate block becomes another block
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level world = context.getLevel();

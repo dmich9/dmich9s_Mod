@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-
+    "#dmich9smod:carnelian_ores",
+    "dmich9smod:carnelian_block"
   ]
 }

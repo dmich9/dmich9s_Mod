@@ -1,8 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#dmich9smod:carnelian_ores",
     "#dmich9smod:strontium_ores",
-    "#dmich9smod:garnet_ores"
+    "dmich9smod:strontium_block",
+    "#dmich9smod:garnet_ores",
+    "dmich9smod:garnet_block"
+
   ]
 }

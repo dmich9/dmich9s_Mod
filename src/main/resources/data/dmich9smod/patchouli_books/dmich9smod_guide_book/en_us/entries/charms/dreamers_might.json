@@ -1,0 +1,16 @@
+{
+  "name": "Dreamer's Might",
+  "icon": "dmich9smod:dreamers_might",
+  "category": "dmich9smod:charms",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This charm applies the 'Resistance' status effect when in the player's inventory."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:dreamers_might",
+      "title": "Dreamer's Might"
+    }
+  ]
+}

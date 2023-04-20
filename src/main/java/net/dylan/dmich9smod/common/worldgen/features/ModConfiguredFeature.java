@@ -56,7 +56,7 @@ public class ModConfiguredFeature {
 
 
 
-    // this code is pretty much copy pasted from vanilla to generate patches of grass
+    // this code is pretty much copied and pasted from vanilla to generate patches of grass
     private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int pTries) {
         return FeatureUtils.simpleRandomPatchConfiguration(pTries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
     }

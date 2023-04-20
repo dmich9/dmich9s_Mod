@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class ModGrassGeneration {
     public static void generateGrass(final BiomeLoadingEvent event)
-            // this method actually generates the grass/flowers
+    // this method actually generates the grass/flowers
     {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);

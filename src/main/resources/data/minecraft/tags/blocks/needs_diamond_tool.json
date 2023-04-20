@@ -6,7 +6,10 @@
     "#dmich9smod:nether_dungeon_bricks",
     "#dmich9smod:end_dungeon_bricks",
     "#dmich9smod:azurite_ores",
+    "dmich9smod:azurite_block",
     "#dmich9smod:serendibite_ores",
-    "#dmich9smod:ambrosia_ores"
+    "dmich9smod:serendibite_block",
+    "#dmich9smod:ambrosia_ores",
+    "dmich9smod:ambrosia_block"
   ]
 }

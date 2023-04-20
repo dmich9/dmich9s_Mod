@@ -1,0 +1,11 @@
+{
+  "name": "Stranded",
+  "icon": "dmich9smod:dmich9smod:stranded",
+  "category": "dmich9smod:effects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This effect temporarily prevents the player from using nether and end portals. End gateways are still functional. It is applied by hostile mobs present in the mod's dungeons."
+    }
+  ]
+}

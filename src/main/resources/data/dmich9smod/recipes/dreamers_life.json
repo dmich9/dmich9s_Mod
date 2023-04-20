@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": {
+      "item": "dmich9smod:dragonfruit"
+    },
+    "B": {
+      "item": "dmich9smod:durian"
+    },
+    "C": {
+      "item": "dmich9smod:starfruit"
+    },
+    "D": {
+      "item": "dmich9smod:dreamers_anguish"
+    },
+    "E": {
+      "item": "dmich9smod:dreamers_fright"
+    },
+    "F": {
+      "item": "dmich9smod:dreamers_might"
+    },
+    "G": {
+      "item": "dmich9smod:dreamscape_oxallis"
+    },
+    "H": {
+      "item": "dmich9smod:spring_water_bucket"
+    },
+    "I": {
+      "item": "dmich9smod:enders_delight"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:dreamers_life"
+  }
+}

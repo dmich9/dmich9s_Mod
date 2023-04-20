@@ -35,7 +35,7 @@ public class EffectEvents {
             if(living.hasEffect(ModEffects.STRANDED.get())){
 
                 /*Basically just tells the entity no when they try to change dimensions.
-                * You can add more conditions if need be like letting the player through if they're in creative.*/
+                 * You can add more conditions if need be like letting the player through if they're in creative.*/
 
                 event.setCanceled(true);
             }
@@ -51,8 +51,7 @@ public class EffectEvents {
                 int amplifier = effect.getAmplifier();
 
                 /*Changes the value of xp gained here.
-                * If the amplifier is 1 the player would get 1.5x more xp.
-                * You can mess around with the maths as you please*/
+                 * If the amplifier is 1 the player would get 1.5x more xp.*/
 
                 event.getOrb().value = event.getOrb().value * (1 + (amplifier/2)) ;
             }
@@ -72,7 +71,7 @@ public class EffectEvents {
 
         if (entity.hasEffect(ModEffects.FURY.get())) {
 
-            if(Mth.randomBetweenInclusive(new Random(), 1, 35) == 25) {
+            if(Mth.randomBetweenInclusive(new Random(), 10, 35) == 25) {
                 BlockPos targetPos = entity.blockPosition();
                 EntityType entityType = TonisHelper.randomEntity();
                 BlockPos spawnPos = TonisHelper.findOnGroundSpawnLocation(entity.level, entityType, targetPos, 20);

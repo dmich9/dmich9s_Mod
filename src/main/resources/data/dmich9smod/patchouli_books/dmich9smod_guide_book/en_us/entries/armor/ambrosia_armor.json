@@ -1,0 +1,31 @@
+{
+  "name": "Ambrosia Armor",
+  "icon": "dmich9smod:ambrosia_chestplate",
+  "category": "dmich9smod:armor",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is the final and strongest set of the game. From bottom to top, the protection values are 5,8,10,5. This set has an enchantibility of 25."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:ambrosia_helmet",
+      "title": "Ambrosia Helm"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:ambrosia_chestplate",
+      "title": "Ambrosia Chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:ambrosia_leggings",
+      "title": "Ambrosia Chausses"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:ambrosia_boots",
+      "title": "Ambrosia Boots"
+    }
+  ]
+}

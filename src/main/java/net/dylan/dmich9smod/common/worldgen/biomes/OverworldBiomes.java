@@ -39,10 +39,10 @@ public class OverworldBiomes {
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(waterColor)
                         .waterFogColor(waterFogColor)
-                .fogColor(12638463)
-                .skyColor(calculateSkyColor(temperature))
-                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(temperature))
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(biomeBuilder.build()).build();
     }
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, int skyColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)

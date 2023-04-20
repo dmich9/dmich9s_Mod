@@ -1,0 +1,18 @@
+{
+  "name": "The Avalanches",
+  "icon": "minecraft:painting",
+  "category": "dmich9smod:paintings",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This painting is a shot from the music video 'Frontier Psychiatrist' by the Avalanches."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "dmich9smod:textures/painting/the_avalanches.png"
+      ],
+      "border": true
+    }
+  ]
+}

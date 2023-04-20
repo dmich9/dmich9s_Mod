@@ -1,0 +1,18 @@
+{
+  "name": "Campfire",
+  "icon": "minecraft:painting",
+  "category": "dmich9smod:paintings",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This painting shows a large campfire with a tree beside it. The picture used for this painting was taken in Pipers Gap, Virginia, near the Crooked Creek fish and wildlife management area."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "dmich9smod:textures/painting/galax_va.png"
+      ],
+      "border": true
+    }
+  ]
+}

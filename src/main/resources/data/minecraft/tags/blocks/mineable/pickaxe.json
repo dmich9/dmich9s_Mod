@@ -21,6 +21,12 @@
     "#dmich9smod:azurite_ores",
     "#dmich9smod:serendibite_ores",
     "#dmich9smod:ambrosia_ores",
+    "dmich9smod:carnelian_block",
+    "dmich9smod:strontium_block",
+    "dmich9smod:garnet_block",
+    "dmich9smod:azurite_block",
+    "dmich9smod:serendibite_block",
+    "dmich9smod:ambrosia_block",
     "#dmich9smod:stars",
     "#dmich9smod:asteroids"
   ]

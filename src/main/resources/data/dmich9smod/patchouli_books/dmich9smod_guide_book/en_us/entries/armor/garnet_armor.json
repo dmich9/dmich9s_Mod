@@ -1,0 +1,31 @@
+{
+  "name": "Garnet Armor",
+  "icon": "dmich9smod:garnet_chestplate",
+  "category": "dmich9smod:armor",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This set is an intermediary between iron and diamond, with less protection than diamond but better enchantibility. From bottom to top, the protection values are 2,5,7,2. This set has an enchantibility of 12."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:garnet_helmet",
+      "title": "Garnet Helm"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:garnet_chestplate",
+      "title": "Garnet Chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:garnet_leggings",
+      "title": "Garnet Chausses"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:garnet_boots",
+      "title": "Garnet Boots"
+    }
+  ]
+}

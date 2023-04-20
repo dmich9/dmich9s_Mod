@@ -1,0 +1,61 @@
+{
+  "name": "Music Discs",
+  "icon": "minecraft:jukebox",
+  "category": "dmich9smod:soundtrack",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This entry shows all the custom music disks, labeled with where they play ingame."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:asteroid_field_record",
+      "title": "Asteroid Field"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:fractured_forest_record",
+      "title": "Fractured Forest"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:dreamscape_record",
+      "title": "Dreamscape"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:end_springs_record",
+      "title": "End Springs"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:mini_dungeon_record",
+      "title": "Mini Dungeon"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:overworld_dungeon_record",
+      "title": "Overworld Dungeon"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:nether_dungeon_record",
+      "title": "Nether Dungeon"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:end_dungeon_record",
+      "title": "End Dungeon"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:boss_record",
+      "title": "Boss"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dmich9smod:final_boss_record",
+      "title": "Final Boss"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Dreamer's Anguish",
+  "icon": "dmich9smod:dreamers_anguish",
+  "category": "dmich9smod:charms",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This charm applies the 'Fury' status effect when in the player's inventory."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dmich9smod:dreamers_anguish",
+      "title": "Dreamer's Anguish"
+    }
+  ]
+}

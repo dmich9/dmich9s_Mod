@@ -29,16 +29,16 @@ public class SurfaceRuleData {
         SurfaceRules.ConditionSource inDreamScape = isBiome(BiomesData.DREAMSCAPE);
 
 
-            return SurfaceRules.sequence(
-                    // example for the first method under this comment:
-                    // if the block is on the floor and it is in the dreamscape biome, put a dreamscape grass block
-                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_GRASS_BLOCK)),
-                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_DIRT)),
-                    SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
-                    SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE))
+        return SurfaceRules.sequence(
+                // example for the first method under this comment:
+                // if the block is on the floor and it is in the dreamscape biome, put a dreamscape grass block
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_GRASS_BLOCK)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE))
 
-            );
-        }
+        );
+    }
 
 
     private static SurfaceRules.RuleSource makeStateRule(Block block)
