@@ -4,8 +4,6 @@ import net.dylan.dmich9smod.init.ModSounds;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
@@ -126,6 +124,6 @@ public class OverworldBiomes {
                 4445678,
                 270131, 16733525,
                 spawnBuilder, biomeBuilder,
-                NORMAL_MUSIC);
+                DREAMSCAPE_MUSIC);
     }
 }
