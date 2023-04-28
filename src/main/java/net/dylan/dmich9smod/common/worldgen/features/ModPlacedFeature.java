@@ -46,14 +46,26 @@ public class ModPlacedFeature {
             ModConfiguredFeature.ORANGE_SPAWN, VegetationPlacements.treePlacement(
                     PlacementUtils.countExtra(1, 0.1f, 5)
             ));
+    public static final Holder<PlacedFeature> FRACTURE_PLACED = PlacementUtils.register("fracture_placed",
+            ModConfiguredFeature.FRACTURED_SPAWN, VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(1, 0.1f, 5)
+            ));
 
     // GRASS
+    //DREAMSCAPE
     public static final Holder<PlacedFeature> DREAMGRASS_PLACED = PlacementUtils.register("patch_dream_grass",
             ModConfiguredFeature.PATCH_GRASS_DREAM, worldSurfaceSquaredWithCount(2));
     public static final Holder<PlacedFeature> DREAMGRASS_TALL_PLACED = PlacementUtils.register("patch_tall_dream_grass",
             ModConfiguredFeature.PATCH_TALLGRASS_DREAM, worldSurfaceSquaredWithCount(1));
+    // FRACTURED FOREST
+    public static final Holder<PlacedFeature> ENDGRASS_PLACED = PlacementUtils.register("patch_end_grass",
+            ModConfiguredFeature.PATCH_GRASS_END, worldSurfaceSquaredWithCount(2));
+    public static final Holder<PlacedFeature> ENDGRASS_TALL_PLACED = PlacementUtils.register("patch_tall_end_grass",
+            ModConfiguredFeature.PATCH_TALLGRASS_END, worldSurfaceSquaredWithCount(1));
+
 
     // FLOWERS
+    // DREAMSCAPE
     public static final Holder<PlacedFeature> DREAMSCAPE_FERN = PlacementUtils.register("dreamscape_fern",
             ModConfiguredFeature.DREAMSCAPE_FERN, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     public static final Holder<PlacedFeature> DREAMSCAPE_BUCKWEED = PlacementUtils.register("dreamscape_buckweed",
@@ -62,5 +74,18 @@ public class ModPlacedFeature {
             ModConfiguredFeature.DREAMSCAPE_TORNBELL, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     public static final Holder<PlacedFeature> DREAMSCAPE_OXALLIS = PlacementUtils.register("dreamscape_oxallis",
             ModConfiguredFeature.DREAMSCAPE_OXALLIS, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    // FRACTURED FOREST
+    public static final Holder<PlacedFeature> END_FERN = PlacementUtils.register("end_fern",
+            ModConfiguredFeature.END_FERN, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> END_RAGWEED = PlacementUtils.register("end_ragweed",
+            ModConfiguredFeature.END_RAGWEED, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> END_LILY = PlacementUtils.register("end_lily",
+            ModConfiguredFeature.END_LILY, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> END_DELIGHT = PlacementUtils.register("end_delight",
+            ModConfiguredFeature.END_DELIGHT, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> END_DEATHTOLL = PlacementUtils.register("end_deathtoll",
+            ModConfiguredFeature.END_DEATHTOLL, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> END_NIGHTSHADE = PlacementUtils.register("end_nightshade",
+            ModConfiguredFeature.END_NIGHTSHADE, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
 }

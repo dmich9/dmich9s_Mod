@@ -33,5 +33,21 @@ public class ModGrassGeneration {
             base.add(ModPlacedFeature.DREAMSCAPE_FERN);
 
         }
+        if (event.getName().toString().equals("dmich9smod:fractured_forest") || event.getName().toString().equals("dmich9smod:end_springs")) // -> this line specifically has to be like this or else it does not recognize it and won't spawn it in the right biome;
+        {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+
+            base.add(ModPlacedFeature.ENDGRASS_PLACED);
+            base.add(ModPlacedFeature.ENDGRASS_TALL_PLACED);
+            base.add(ModPlacedFeature.END_FERN);
+            base.add(ModPlacedFeature.END_RAGWEED);
+            base.add(ModPlacedFeature.END_LILY);
+            base.add(ModPlacedFeature.END_DELIGHT);
+            base.add(ModPlacedFeature.END_DEATHTOLL);
+            base.add(ModPlacedFeature.END_NIGHTSHADE);
+
+        }
     }
 }

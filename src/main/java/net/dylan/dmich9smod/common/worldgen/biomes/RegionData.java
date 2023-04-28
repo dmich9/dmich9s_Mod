@@ -34,7 +34,8 @@ public class RegionData extends terrablender.api.Region {
         this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
             // if a forest biome could spawn, there is a chance it's a maple forest (very basic implementation)
             builder.replaceBiome(Biomes.FOREST, BiomesData.MAPLE_FOREST);
-
+            builder.replaceBiome(Biomes.FOREST, BiomesData.FRACTURED_FOREST);
+            builder.replaceBiome(Biomes.THE_VOID, BiomesData.ASTEROID_FIELD);
             // this is a highly customized way to spawn the dreamscape biome
             List<Climate.ParameterPoint> dreamScapeBiome = new ParameterUtils.ParameterPointListBuilder()
                     .temperature(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.WARM)

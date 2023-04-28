@@ -39,5 +39,12 @@ public class ModTreeGeneration {
             base.add(ModPlacedFeature.RED_PLACED);
             base.add(ModPlacedFeature.YELLOW_PLACED);
         }
+        else if (event.getName().toString().equals("dmich9smod:fractured_forest") || event.getName().toString().equals("dmich9smod:end_springs"))// -> this line has to be like that or else it won't generate like this; just change the name of this with the registry name of your biome
+        {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(ModPlacedFeature.FRACTURE_PLACED);
+        }
     }
 }

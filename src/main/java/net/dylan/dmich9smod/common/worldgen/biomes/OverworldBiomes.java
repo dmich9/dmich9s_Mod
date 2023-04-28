@@ -2,11 +2,13 @@ package net.dylan.dmich9smod.common.worldgen.biomes;
 
 import net.dylan.dmich9smod.init.ModSounds;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 import javax.annotation.Nullable;
 
@@ -102,7 +104,7 @@ public class OverworldBiomes {
                 14524637,
                 14204888,
                 spawnBuilder, biomeBuilder,
-                DREAMSCAPE_MUSIC);
+                NORMAL_MUSIC);
     }
 
     // this is the dreamscape biome; adds all possible spawns to this biome
@@ -126,6 +128,44 @@ public class OverworldBiomes {
                 4445678,
                 270131, 16733525,
                 spawnBuilder, biomeBuilder,
+                DREAMSCAPE_MUSIC);
+    }
+
+    public static Biome fracturedForest()
+    {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        return biome(Biome.Precipitation.RAIN,
+                Biome.BiomeCategory.NONE,
+                1.0F,
+                0.0F,
+                6834020,
+                14204888,
+                6826080,
+                14204888,
+                spawnBuilder, biomeBuilder,
                 NORMAL_MUSIC);
+    }
+    public static Biome endSprings()
+    {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        return biome(Biome.Precipitation.RAIN,
+                Biome.BiomeCategory.NONE,
+                1.0F,
+                0.0F,
+                6834020,
+                14204888,
+                6826080,
+                14204888,
+                spawnBuilder, biomeBuilder,
+                NORMAL_MUSIC);
+    }
+    public static Biome asteroidField()
+    {
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder();
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, MiscOverworldPlacements.VOID_START_PLATFORM);
+        return biome(Biome.Precipitation.NONE, Biome.BiomeCategory.NONE, 0.5F, 0.5F,
+                new MobSpawnSettings.Builder(), biomegenerationsettings$builder, NORMAL_MUSIC);
     }
 }

@@ -16,6 +16,7 @@ public class SurfaceRuleData {
     private static final SurfaceRules.RuleSource DREAMSCAPE_GRASS_BLOCK = makeStateRule(ModBlocksAndItems.DREAMSCAPE_GRASS_BLOCK.get());
     private static final SurfaceRules.RuleSource DREAMSCAPE_STONE = makeStateRule(ModBlocksAndItems.DREAMSCAPE_STONE.get());
 
+    private static final SurfaceRules.RuleSource OVERGROWN_END_STONE = makeStateRule(ModBlocksAndItems.OVERGROWN_END_STONE.get());
     /**
      * this method makes the rules and applies them to what block can be where
      *
@@ -27,6 +28,8 @@ public class SurfaceRuleData {
         SurfaceRules.ifTrue(isAtOrAboveWaterLevel, DREAMSCAPE_GRASS_BLOCK);
         // condition that we use later to check if we're setting blocks in the dreamscape biome; just make another method with another biome and replicate the code to have the same effect
         SurfaceRules.ConditionSource inDreamScape = isBiome(BiomesData.DREAMSCAPE);
+        SurfaceRules.ConditionSource inFracturedForest = isBiome(BiomesData.FRACTURED_FOREST);
+        SurfaceRules.ConditionSource inAsteroidField = isBiome(BiomesData.ASTEROID_FIELD);
 
 
         return SurfaceRules.sequence(
@@ -35,8 +38,8 @@ public class SurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_GRASS_BLOCK)),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_DIRT)),
                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE))
-
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE))
         );
     }
 

@@ -17,5 +17,8 @@ public class ModBiomes {
         IForgeRegistry<Biome> registry = event.getRegistry();
         registry.register(OverworldBiomes.dreamscape().setRegistryName(BiomesData.DREAMSCAPE.location()));
         registry.register(OverworldBiomes.mapleForest().setRegistryName(BiomesData.MAPLE_FOREST.location()));
+        registry.register(OverworldBiomes.fracturedForest().setRegistryName(BiomesData.FRACTURED_FOREST.location()));
+        registry.register(OverworldBiomes.endSprings().setRegistryName(BiomesData.END_SPRINGS.location()));
+        registry.register(OverworldBiomes.asteroidField().setRegistryName(BiomesData.ASTEROID_FIELD.location()));
     }
 }

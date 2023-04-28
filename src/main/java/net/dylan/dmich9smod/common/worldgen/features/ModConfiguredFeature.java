@@ -32,7 +32,9 @@ public class ModConfiguredFeature {
      * Always test out the numbers to be comfortable with how many and in what way they get spawned
      */
 
+
     // FLOWERS -> the flowers have another way of spawning than the (tall) grass, you can replicate the code and just change blocks for other flowers or change numbers for other probabilities;
+    // DREAMSCAPE
     // DREAM FERN
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DREAMSCAPE_FERN =
             FeatureUtils.register("dreamscape_fern", Feature.FLOWER,
@@ -55,16 +57,55 @@ public class ModConfiguredFeature {
                             new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.DREAMSCAPE_OXALLIS.get())))));
 
 
+    // FRACTURED FOREST
+    // FERN
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_FERN =
+            FeatureUtils.register("end_fern", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.END_FERN.get())))));
+    // RAGWEED
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_RAGWEED =
+            FeatureUtils.register("end_ragweed", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.END_RAGWEED.get())))));
+    // LILY
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_LILY =
+            FeatureUtils.register("end_lily", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.ENDER_LILY.get())))));
+    // DELIGHT
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_DELIGHT =
+            FeatureUtils.register("end_delight", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.ENDERS_DELIGHT.get())))));
+    // DEATHTOLL
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_DEATHTOLL =
+            FeatureUtils.register("end_deathtoll", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.END_DEATHTOLL.get())))));
+    // NIGHTSHADE
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> END_NIGHTSHADE =
+            FeatureUtils.register("end_nightshade", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocksAndItems.END_NIGHTSHADE.get())))));
+
 
     // this code is pretty much copied and pasted from vanilla to generate patches of grass
     private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int pTries) {
         return FeatureUtils.simpleRandomPatchConfiguration(pTries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
     }
+    // DREAMSCAPE
     // DREAM GRASS
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GRASS_DREAM =
             FeatureUtils.register("patch_grass_dream", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(ModBlocksAndItems.DREAMSCAPE_GRASS.get()), 32));
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALLGRASS_DREAM =
             FeatureUtils.register("patch_tallgrass_dream", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(ModBlocksAndItems.DREAMSCAPE_TALL_GRASS.get()), 32));
+
+    // END GRASS
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GRASS_END =
+            FeatureUtils.register("patch_grass_end", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(ModBlocksAndItems.END_GRASS.get()), 32));
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALLGRASS_END =
+            FeatureUtils.register("patch_tallgrass_end", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(ModBlocksAndItems.END_TALL_GRASS.get()), 32));
 
     /**
      * There is some code added for the trees outside of the tree code
@@ -135,6 +176,11 @@ public class ModConfiguredFeature {
                     BlockStateProvider.simple(ModBlocksAndItems.FRACTURED_LEAVES.get()),
                     new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                     new TwoLayersFeatureSize(1, 0, 2)).build());
+    public static final Holder<PlacedFeature> FRACTURED_CHECKED = PlacementUtils.register("fractured", FRACTURED_TREE,
+            PlacementUtils.filteredByBlockSurvival(ModBlocksAndItems.FRACTURED_SAPLING.get()));
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> FRACTURED_SPAWN =
+            FeatureUtils.register("fractured_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(FRACTURED_CHECKED, 0.5F)), FRACTURED_CHECKED));
 
     // MAPLE TREES
     // YELLOW

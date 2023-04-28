@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 //import net.dylan.dmich9smod.common.worldgen.ModStructures;
 import net.dylan.dmich9smod.common.worldgen.biomes.RegionData;
 import net.dylan.dmich9smod.common.worldgen.biomes.SurfaceRuleData;
+import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.*;
 import net.dylan.dmich9smod.api.block.ModWoodTypes;
 import net.dylan.dmich9smod.api.block.ModBlockEntities;
@@ -47,6 +48,7 @@ public class dmich9sMod
         ModBlockEntities.register(eventBus);
         ModEntityTypes.register(eventBus);
         //ModStructures.register(eventBus);
+        ModDimensions.register();
         ModBlocksAndItems.register(eventBus);
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);

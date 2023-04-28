@@ -12,7 +12,9 @@ public class BiomesData {
 
     public static final ResourceKey<Biome> DREAMSCAPE = register("dreamscape");
     public static final ResourceKey<Biome> MAPLE_FOREST = register("maple_forest");
-
+    public static final ResourceKey<Biome> FRACTURED_FOREST = register("fractured_forest");
+    public static final ResourceKey<Biome> END_SPRINGS = register("end_springs");
+    public static final ResourceKey<Biome> ASTEROID_FIELD = register("asteroid_field");
     private static ResourceKey<Biome> register(String name)
     {
         return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(dmich9sMod.MOD_ID, name));
