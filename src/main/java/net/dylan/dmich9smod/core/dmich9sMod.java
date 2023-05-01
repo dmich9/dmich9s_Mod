@@ -2,6 +2,7 @@ package net.dylan.dmich9smod.core;
 
 import com.mojang.logging.LogUtils;
 //import net.dylan.dmich9smod.common.worldgen.ModStructures;
+import net.dylan.dmich9smod.common.util.ModPOIs;
 import net.dylan.dmich9smod.common.worldgen.biomes.RegionData;
 import net.dylan.dmich9smod.common.worldgen.biomes.SurfaceRuleData;
 import net.dylan.dmich9smod.init.*;
@@ -40,7 +41,8 @@ public class dmich9sMod
         ModEffects.MOB_EFFECTS.register(eventBus);
         ModPotions.register(eventBus);
         ModParticles.register(eventBus);
-
+        ModDimensions.register();
+        ModPOIs.register(eventBus);
         ModFluids.register(eventBus);
         ModSounds.register(eventBus);
         ModPaintings.register(eventBus);
@@ -60,6 +62,9 @@ public class dmich9sMod
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.END_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.NETHER_TORCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DUNGEON_LADDER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DREAMSCAPE_PORTAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DREAMSCAPE_OVERGROWTH.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.ANGUISH_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.ANGUISH_TRAPDOOR.get(), RenderType.cutout());

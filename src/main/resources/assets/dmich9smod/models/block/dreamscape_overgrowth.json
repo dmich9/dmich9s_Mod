@@ -1,0 +1,16 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dmich9smod:block/dreamscape_overgrowth",
+    "dreamscape_overgrowth": "dmich9smod:block/dreamscape_overgrowth"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#dreamscape_overgrowth" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#dreamscape_overgrowth" }
+      }
+    }
+  ]
+}

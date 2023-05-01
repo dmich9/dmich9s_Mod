@@ -341,6 +341,13 @@
   "item.dmich9smod.cooked_horse_meat": "Cooked Horse Meat",
   "item.dmich9smod.raw_suspicious_meat": "Raw Suspicious Meat",
   "item.dmich9smod.cooked_suspicious_meat": "Cooked Suspicious Meat",
+  "block.dmich9smod.dreamscape_portal": "Dreamscape Portal",
+  "block.dmich9smod.dreamscape_portal_frame": "Dreamscape Portal Frame",
+  "block.dmich9smod.dungeon_ladder": "Dungeon Ladder",
+  "block.dmich9smod.dreamscape_overgrowth": "Dreamscape Overgrowth",
+
+  "dimension.dmich9smod.dreamscape": "Dreamscape",
+
   "biome.dmich9smod.dreamscape": "Dreamscape",
   "biome.dmich9smod.end_springs": "End Springs",
   "biome.dmich9smod.fractured_forest": "Fractured Forest",
