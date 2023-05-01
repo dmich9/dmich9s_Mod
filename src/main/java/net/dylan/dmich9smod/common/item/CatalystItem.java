@@ -2,8 +2,8 @@ package net.dylan.dmich9smod.common.item;
 
 import net.dylan.dmich9smod.common.block.DreamscapePortalBlock;
 import net.dylan.dmich9smod.common.util.ModCreativeModeTab;
+import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
-import net.dylan.dmich9smod.init.ModDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -26,7 +26,7 @@ public class CatalystItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if(context.getPlayer() != null) {
-            if(context.getPlayer().level.dimension() == ModDimensions.DREAMSCAPE_KEY
+            if(context.getPlayer().level.dimension() == ModDimensions.FRACTURED_KEY
                     || context.getPlayer().level.dimension() == Level.OVERWORLD) {
                 for(Direction direction : Direction.Plane.VERTICAL) {
                     BlockPos framePos = context.getClickedPos().relative(direction);

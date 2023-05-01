@@ -2,9 +2,11 @@ package net.dylan.dmich9smod.common.worldgen.biomes;
 
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
-import static net.minecraft.world.level.levelgen.SurfaceRules.isBiome;
+import static net.minecraft.world.level.levelgen.SurfaceRules.*;
 
 public class SurfaceRuleData {
     /**
@@ -17,6 +19,8 @@ public class SurfaceRuleData {
     private static final SurfaceRules.RuleSource DREAMSCAPE_STONE = makeStateRule(ModBlocksAndItems.DREAMSCAPE_STONE.get());
 
     private static final SurfaceRules.RuleSource OVERGROWN_END_STONE = makeStateRule(ModBlocksAndItems.OVERGROWN_END_STONE.get());
+    private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
+
     /**
      * this method makes the rules and applies them to what block can be where
      *
@@ -29,7 +33,11 @@ public class SurfaceRuleData {
         // condition that we use later to check if we're setting blocks in the dreamscape biome; just make another method with another biome and replicate the code to have the same effect
         SurfaceRules.ConditionSource inDreamScape = isBiome(BiomesData.DREAMSCAPE);
         SurfaceRules.ConditionSource inFracturedForest = isBiome(BiomesData.FRACTURED_FOREST);
+        SurfaceRules.ConditionSource inEndSprings = isBiome(BiomesData.END_SPRINGS);
+
         SurfaceRules.ConditionSource inAsteroidField = isBiome(BiomesData.ASTEROID_FIELD);
+        SurfaceRules.ConditionSource EXTREMELY_DEEP_UNDER_FLOOR = stoneDepthCheck(0, true, 120, CaveSurface.FLOOR);
+        SurfaceRules.ConditionSource WATER_BLOCK = waterBlockCheck(0, 1);
 
 
         return SurfaceRules.sequence(
@@ -39,7 +47,22 @@ public class SurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_DIRT)),
                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
                 SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE))
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
+
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
+
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
+                SurfaceRules.ifTrue(EXTREMELY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
+                SurfaceRules.ifTrue(WATER_BLOCK, SurfaceRules.ifTrue(inAsteroidField, AIR))
+
         );
     }
 

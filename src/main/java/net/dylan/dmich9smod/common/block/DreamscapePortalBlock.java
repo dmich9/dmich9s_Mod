@@ -1,8 +1,8 @@
 package net.dylan.dmich9smod.common.block;
 import net.dylan.dmich9smod.common.util.ModTags;
 import net.dylan.dmich9smod.common.util.ModTeleporter;
+import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
-import net.dylan.dmich9smod.init.ModDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
@@ -122,8 +122,8 @@ public class DreamscapePortalBlock extends Block {
                 Level entityWorld = entity.level;
                 if(entityWorld != null) {
                     MinecraftServer minecraftserver = entityWorld.getServer();
-                    ResourceKey<Level> destination = entity.level.dimension() == ModDimensions.DREAMSCAPE_KEY
-                            ? Level.OVERWORLD : ModDimensions.DREAMSCAPE_KEY;
+                    ResourceKey<Level> destination = entity.level.dimension() == ModDimensions.FRACTURED_KEY
+                            ? Level.OVERWORLD : ModDimensions.FRACTURED_KEY;
                     if(minecraftserver != null) {
                         ServerLevel destinationWorld = minecraftserver.getLevel(destination);
                         if(destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {

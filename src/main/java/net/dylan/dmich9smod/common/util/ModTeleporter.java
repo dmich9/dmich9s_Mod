@@ -1,7 +1,7 @@
 package net.dylan.dmich9smod.common.util;
 import net.dylan.dmich9smod.common.block.DreamscapePortalBlock;
+import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
-import net.dylan.dmich9smod.init.ModDimensions;
 import net.minecraft.BlockUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
@@ -163,8 +163,8 @@ public class ModTeleporter implements ITeleporter {
     @Nullable
     @Override
     public PortalInfo getPortalInfo(Entity entity, ServerLevel level, Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-        boolean destinationIsUG = level.dimension() == ModDimensions.DREAMSCAPE_KEY;
-        if (entity.level.dimension() != ModDimensions.DREAMSCAPE_KEY && !destinationIsUG) {
+        boolean destinationIsUG = level.dimension() == ModDimensions.FRACTURED_KEY;
+        if (entity.level.dimension() != ModDimensions.FRACTURED_KEY && !destinationIsUG) {
             return null;
         }
         else {

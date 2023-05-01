@@ -20,6 +20,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -49,7 +50,7 @@ public class dmich9sMod
         ModPaintings.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModEntityTypes.register(eventBus);
-        //ModStructures.register(eventBus);
+        ModStructures.register(eventBus);
         ModDimensions.register();
         ModBlocksAndItems.register(eventBus);
         eventBus.addListener(this::setup);
@@ -178,9 +179,12 @@ public class dmich9sMod
             Sheets.addWoodType(ModWoodTypes.FRACTURED);
             Sheets.addWoodType(ModWoodTypes.MAPLE);
             Regions.register(new RegionData(new ResourceLocation(MOD_ID, "overworld"), 2));
-
+            
             // Register our surface rules
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, SurfaceRuleData.makeRules());
+            SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules
+
+
         });
     }
 }
