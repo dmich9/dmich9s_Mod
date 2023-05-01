@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -370,6 +371,20 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> STARFRUIT_CROP = BLOCKS.register("starfruit_crop", () -> new StarfruitCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS).noCollission().noOcclusion()));
     public static final RegistryObject<Item> STARFRUIT_SEEDS = ITEMS.register("starfruit_seeds", () -> new ItemNameBlockItem(ModBlocksAndItems.STARFRUIT_CROP.get(), new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Item> STARFRUIT = ITEMS.register("starfruit", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.STARFRUIT)));
+    public static final RegistryObject<Item> DRAGONFRUIT_ICE_CREAM = ITEMS.register("dragonfruit_ice_cream", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.DRAGONFRUIT_ICE_CREAM)));
+    public static final RegistryObject<Item> DURIAN_ICE_CREAM = ITEMS.register("durian_ice_cream", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.DURIAN_ICE_CREAM)));
+    public static final RegistryObject<Item> STARFRUIT_ICE_CREAM = ITEMS.register("starfruit_ice_cream", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.STARFRUIT_ICE_CREAM)));
+    public static final RegistryObject<Item> FRUIT_SALAD = ITEMS.register("fruit_salad", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.FRUIT_SALAD)));
+    public static final RegistryObject<Item> RAW_HORSE_MEAT = ITEMS.register("raw_horse_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.RAW_HORSE_MEAT)));
+    public static final RegistryObject<Item> COOKED_HORSE_MEAT = ITEMS.register("cooked_horse_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.COOKED_HORSE_MEAT)));
+    public static final RegistryObject<Item> RAW_SUSPICIOUS_MEAT = ITEMS.register("raw_suspicious_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.RAW_SUSPICIOUS_MEAT)));
+    public static final RegistryObject<Item> COOKED_SUSPICIOUS_MEAT = ITEMS.register("cooked_suspicious_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.COOKED_SUSPICIOUS_MEAT)));
+
+    public static final RegistryObject<Block> DREAMSCAPE_PORTAL = BLOCKS.register("dreamscape_portal", DreamscapePortalBlock::new);
+    public static final RegistryObject<Block> DREAMSCAPE_PORTAL_FRAME = registerBlock("dreamscape_portal_frame", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f)), ModCreativeModeTab.COURSE_TAB);
+    public static final RegistryObject<Item> CATALYST_ITEM_PLACEHOLDER = ITEMS.register("catalyst_item_placeholder", CatalystItem::new);
+    public static final RegistryObject<Block> DUNGEON_LADDER = registerBlock("dungeon_ladder", () -> new ModLadderBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.4F).sound(SoundType.LADDER).noOcclusion()),ModCreativeModeTab.COURSE_TAB);
+    public static final RegistryObject<Block> DREAMSCAPE_OVERGROWTH = registerBlock("dreamscape_overgrowth", () -> new DreamscapeOvergrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.GLOW_LICHEN).noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).lightLevel(DreamscapeOvergrowthBlock.emission(0))),ModCreativeModeTab.COURSE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn, tab);return toReturn;}
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {return ModBlocksAndItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));}
