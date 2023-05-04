@@ -2,7 +2,7 @@
   "type": "dmich9smod:fractured_reality",
   "generator": {
     "type": "minecraft:noise",
-    "seed": 1340005738,
+    "seed": 1141623650,
     "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:multi_noise",
@@ -11,28 +11,28 @@
           "biome": "dmich9smod:dreamscape",
           "parameters": {
             "temperature": [
-              -1,
+              -2,
               0
             ],
             "humidity": [
-              0,
+              -1,
               0
             ],
             "continentalness": [
               0,
-              1
+              0
             ],
             "erosion": [
-              -1,
-              0
+              0,
+              1
             ],
             "weirdness": [
               0,
-              0
+              2
             ],
             "depth": [
               0,
-              0
+              1
             ],
             "offset": 1
           }
@@ -41,90 +41,90 @@
           "biome": "dmich9smod:fractured_forest",
           "parameters": {
             "temperature": [
-              -1,
-              0
+              -0.75,
+              2
             ],
             "humidity": [
-              0,
-              0
+              -0.5,
+              1
             ],
             "continentalness": [
-              0,
-              0
+              -0.25,
+              2
             ],
             "erosion": [
-              -1,
-              0
+              0,
+              1
             ],
             "weirdness": [
-              0,
-              0
+              0.25,
+              2
             ],
             "depth": [
-              0,
-              0
+              0.5,
+              1
             ],
-            "offset": 0
+            "offset": 1
           }
         },
         {
           "biome": "dmich9smod:end_springs",
           "parameters": {
             "temperature": [
-              0,
-              0
+              0.8,
+              1
             ],
             "humidity": [
-              -1,
-              0
+              0.4,
+              2
             ],
             "continentalness": [
-              0,
-              0
+              0.2,
+              1
             ],
             "erosion": [
-              0,
-              0
+              0.4,
+              2
             ],
             "weirdness": [
-              0,
-              0
+              0.8,
+              1
             ],
             "depth": [
-              0,
-              0
+              0.6,
+              2
             ],
-            "offset": 0
+            "offset": 0.125
           }
         },
         {
           "biome": "dmich9smod:asteroid_field",
           "parameters": {
             "temperature": [
-              0,
-              0
+              0.9,
+              1
             ],
             "humidity": [
-              0,
-              0
+              0.7,
+              1
             ],
             "continentalness": [
-              1,
-              2
+              0.5,
+              1.5
             ],
             "erosion": [
-              0,
-              0
+              0.3,
+              1.3
             ],
             "weirdness": [
-              -1,
-              0
+              0.1,
+              1.1
             ],
             "depth": [
-              0,
-              0
+              0.2,
+              1.2
             ],
-            "offset": 0
+            "offset": 1
           }
         }
       ]

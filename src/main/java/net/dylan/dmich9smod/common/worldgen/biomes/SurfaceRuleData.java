@@ -19,6 +19,7 @@ public class SurfaceRuleData {
     private static final SurfaceRules.RuleSource DREAMSCAPE_STONE = makeStateRule(ModBlocksAndItems.DREAMSCAPE_STONE.get());
 
     private static final SurfaceRules.RuleSource OVERGROWN_END_STONE = makeStateRule(ModBlocksAndItems.OVERGROWN_END_STONE.get());
+    private static final SurfaceRules.RuleSource END_STONE = makeStateRule(Blocks.END_STONE);
     private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
 
     /**
@@ -34,8 +35,8 @@ public class SurfaceRuleData {
         SurfaceRules.ConditionSource inDreamScape = isBiome(BiomesData.DREAMSCAPE);
         SurfaceRules.ConditionSource inFracturedForest = isBiome(BiomesData.FRACTURED_FOREST);
         SurfaceRules.ConditionSource inEndSprings = isBiome(BiomesData.END_SPRINGS);
-
         SurfaceRules.ConditionSource inAsteroidField = isBiome(BiomesData.ASTEROID_FIELD);
+
         SurfaceRules.ConditionSource EXTREMELY_DEEP_UNDER_FLOOR = stoneDepthCheck(0, true, 120, CaveSurface.FLOOR);
         SurfaceRules.ConditionSource WATER_BLOCK = waterBlockCheck(0, 1);
 
@@ -48,19 +49,19 @@ public class SurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
                 SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inDreamScape, DREAMSCAPE_STONE)),
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, DREAMSCAPE_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inFracturedForest, DREAMSCAPE_STONE)),
 
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
-                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, OVERGROWN_END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, END_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, DREAMSCAPE_STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inEndSprings, DREAMSCAPE_STONE)),
 
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
-                SurfaceRules.ifTrue(EXTREMELY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(inAsteroidField, AIR)),
                 SurfaceRules.ifTrue(WATER_BLOCK, SurfaceRules.ifTrue(inAsteroidField, AIR))
 
         );
