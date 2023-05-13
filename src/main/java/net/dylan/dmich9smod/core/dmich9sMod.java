@@ -181,8 +181,10 @@ public class dmich9sMod
             Regions.register(new RegionData(new ResourceLocation(MOD_ID, "overworld"), 2));
             
             // Register our surface rules
-            SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules
+            /*SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules*/
+            // Given we only add two biomes, we should keep our weight relatively low.
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, SurfaceRuleData.makeRules());
 
 
         });
