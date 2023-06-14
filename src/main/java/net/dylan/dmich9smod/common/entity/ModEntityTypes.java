@@ -21,13 +21,13 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<CorruptedZombieEntity>> CORRUPTED_ZOMBIE = ENTITY_TYPES.register("corrupted_zombie",
             () -> EntityType.Builder.of(CorruptedZombieEntity::new, MobCategory.MONSTER)
-                    .sized(0.8f, 0.6f).build(new ResourceLocation(dmich9sMod.MOD_ID, "corrupted_zombie").toString()));
+                    .sized(0.6F, 1.95F).build(new ResourceLocation(dmich9sMod.MOD_ID, "corrupted_zombie").toString()));
     public static final RegistryObject<EntityType<ThunderbirdEntity>> THUNDERBIRD = ENTITY_TYPES.register("thunderbird",
             () -> EntityType.Builder.of(ThunderbirdEntity::new, MobCategory.MONSTER)
                     .sized(0.8f, 0.6f).build(new ResourceLocation(dmich9sMod.MOD_ID, "thunderbird").toString()));
     public static final RegistryObject<EntityType<FracturedWandererEntity>> FRACTURED_WANDERER = ENTITY_TYPES.register("fractured_wanderer",
             () -> EntityType.Builder.of(FracturedWandererEntity::new, MobCategory.MONSTER)
-                    .sized(0.8f, 0.6f).build(new ResourceLocation(dmich9sMod.MOD_ID, "fractured_wanderer").toString()));
+                    .sized(0.6F, 1.95F).build(new ResourceLocation(dmich9sMod.MOD_ID, "fractured_wanderer").toString()));
     public static final RegistryObject<EntityType<SandElementalEntity>> SAND_ELEMENTAL = ENTITY_TYPES.register("sand_elemental",
             () -> EntityType.Builder.of(SandElementalEntity::new, MobCategory.MONSTER)
                     .sized(0.8f, 0.6f).build(new ResourceLocation(dmich9sMod.MOD_ID, "sand_elemental").toString()));
