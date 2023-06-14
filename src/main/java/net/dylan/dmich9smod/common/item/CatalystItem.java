@@ -1,6 +1,6 @@
 package net.dylan.dmich9smod.common.item;
 
-import net.dylan.dmich9smod.common.block.DreamscapePortalBlock;
+import net.dylan.dmich9smod.common.block.FracturedRealityPortalBlock;
 import net.dylan.dmich9smod.common.util.ModCreativeModeTab;
 import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
@@ -30,7 +30,7 @@ public class CatalystItem extends Item {
                     || context.getPlayer().level.dimension() == Level.OVERWORLD) {
                 for(Direction direction : Direction.Plane.VERTICAL) {
                     BlockPos framePos = context.getClickedPos().relative(direction);
-                    if(((DreamscapePortalBlock) ModBlocksAndItems.DREAMSCAPE_PORTAL.get()).trySpawnPortal(context.getLevel(), framePos)) {
+                    if(((FracturedRealityPortalBlock) ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get()).trySpawnPortal(context.getLevel(), framePos)) {
                         context.getLevel().playSound(context.getPlayer(), framePos,
                                 SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1.0F, 1.0F);
                         return InteractionResult.CONSUME;

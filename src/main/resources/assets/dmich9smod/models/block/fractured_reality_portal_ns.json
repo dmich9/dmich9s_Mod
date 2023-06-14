@@ -1,10 +1,10 @@
 {
   "textures": {
-    "particle": "dmich9smod:block/dreamscape_portal",
-    "portal": "dmich9smod:block/dreamscape_portal"
+    "particle": "dmich9smod:block/fractured_reality_portal",
+    "portal": "dmich9smod:block/fractured_reality_portal"
   },
   "elements": [
-    {   "from": [ 6, 0, 0 ],
+    {   "from": [ 0, 0, 6 ],
       "to": [ 16, 16, 10 ],
       "faces": {
         "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#portal" },

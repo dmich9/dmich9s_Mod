@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "dmich9smod:block/dungeon_ladder"
-  }
+  "parent": "dmich9smod:block/dungeon_ladder"
 }

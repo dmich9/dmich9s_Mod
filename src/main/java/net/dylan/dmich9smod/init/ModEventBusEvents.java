@@ -1,12 +1,13 @@
 package net.dylan.dmich9smod.init;
 
-import net.dylan.dmich9smod.core.dmich9sMod;
-import net.dylan.dmich9smod.init.ModParticles;
 import net.dylan.dmich9smod.client.particle.EndTorchParticles;
+import net.dylan.dmich9smod.common.entity.*;
+import net.dylan.dmich9smod.core.dmich9sMod;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -27,6 +28,14 @@ public class ModEventBusEvents {
         Minecraft.getInstance().particleEngine.register(ModParticles.END_TORCH_PARTICLES.get(), EndTorchParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.NETHER_TORCH_PARTICLES.get(), EndTorchParticles.Provider::new);
 
+    }
+    @SubscribeEvent
+    public static void entityAtributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.CORRUPTED_ZOMBIE.get(), CorruptedZombieEntity.setAttributes());
+        event.put(ModEntityTypes.THUNDERBIRD.get(), ThunderbirdEntity.setAttributes());
+        event.put(ModEntityTypes.FRACTURED_WANDERER.get(), FracturedWandererEntity.setAttributes());
+        event.put(ModEntityTypes.SAND_ELEMENTAL.get(), SandElementalEntity.setAttributes());
+        event.put(ModEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemEntity.setAttributes());
     }
 
 }

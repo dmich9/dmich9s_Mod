@@ -117,9 +117,9 @@ public class ModConfiguredFeature {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> ANGUISH_TREE =
             FeatureUtils.register("anguish", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocksAndItems.ANGUISH_LOG.get()),
-                    new ForkingTrunkPlacer(6, 2, 4),
-                    BlockStateProvider.simple(ModBlocksAndItems.ANGUISH_LEAVES.get()),
-                    new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                    new StraightTrunkPlacer(5, 6, 3),
+                    BlockStateProvider.simple(ModBlocksAndItems.DREAM_LEAVES.get()),
+                    new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                     new TwoLayersFeatureSize(1, 0, 2)).build());
     public static final Holder<PlacedFeature> ANGUISH_CHECKED = PlacementUtils.register("anguish", ANGUISH_TREE,
             PlacementUtils.filteredByBlockSurvival(ModBlocksAndItems.ANGUISH_SAPLING.get()));
@@ -131,9 +131,9 @@ public class ModConfiguredFeature {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> FRIGHT_TREE =
             FeatureUtils.register("fright", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocksAndItems.FRIGHT_LOG.get()),
-                    new ForkingTrunkPlacer(5, 6, 3),
-                    BlockStateProvider.simple(ModBlocksAndItems.FRIGHT_LEAVES.get()),
-                    new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                    new StraightTrunkPlacer(5, 6, 3),
+                    BlockStateProvider.simple(ModBlocksAndItems.DREAM_LEAVES.get()),
+                    new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                     new TwoLayersFeatureSize(1, 0, 2)).build());
     public static final Holder<PlacedFeature> FRIGHT_CHECKED = PlacementUtils.register("fright", FRIGHT_TREE,
             PlacementUtils.filteredByBlockSurvival(ModBlocksAndItems.FRIGHT_LEAVES.get()));
@@ -145,9 +145,9 @@ public class ModConfiguredFeature {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> MIGHT_TREE =
             FeatureUtils.register("might", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocksAndItems.MIGHT_LOG.get()),
-                    new ForkingTrunkPlacer(5, 6, 3),
-                    BlockStateProvider.simple(ModBlocksAndItems.MIGHT_LEAVES.get()),
-                    new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), 8),
+                    new StraightTrunkPlacer(5, 6, 3),
+                    BlockStateProvider.simple(ModBlocksAndItems.DREAM_LEAVES.get()),
+                    new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                     new TwoLayersFeatureSize(1, 0, 2)).build());
     public static final Holder<PlacedFeature> MIGHT_CHECKED = PlacementUtils.register("might", MIGHT_TREE,
             PlacementUtils.filteredByBlockSurvival(ModBlocksAndItems.MIGHT_LEAVES.get()));

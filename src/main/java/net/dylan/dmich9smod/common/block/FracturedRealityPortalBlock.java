@@ -34,12 +34,12 @@ import net.minecraftforge.eventbus.api.Cancelable;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class DreamscapePortalBlock extends Block {
+public class FracturedRealityPortalBlock extends Block {
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     protected static final VoxelShape X_AABB = Block.box(0.0D, 0.0D, 6.0D, 16.0D, 16.0D, 10.0D);
     protected static final VoxelShape Z_AABB = Block.box(6.0D, 0.0D, 0.0D, 10.0D, 16.0D, 16.0D);
 
-    public DreamscapePortalBlock() {
+    public FracturedRealityPortalBlock() {
         super(Properties.of(Material.PORTAL)
                 .strength(-1F)
                 .noCollission()
@@ -61,7 +61,7 @@ public class DreamscapePortalBlock extends Block {
     }
 
     public boolean trySpawnPortal(LevelAccessor worldIn, BlockPos pos) {
-        DreamscapePortalBlock.Size KJPortalBlock$size = this.isPortal(worldIn, pos);
+        FracturedRealityPortalBlock.Size KJPortalBlock$size = this.isPortal(worldIn, pos);
         if (KJPortalBlock$size != null && !onTrySpawnPortal(worldIn, pos, KJPortalBlock$size)) {
             KJPortalBlock$size.placePortalBlocks();
             return true;
@@ -70,33 +70,33 @@ public class DreamscapePortalBlock extends Block {
         }
     }
 
-    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, DreamscapePortalBlock.Size size) {
+    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, FracturedRealityPortalBlock.Size size) {
         return MinecraftForge.EVENT_BUS.post(new PortalSpawnEvent(world, pos, world.getBlockState(pos), size));
     }
 
     @Cancelable
     public static class PortalSpawnEvent extends BlockEvent {
-        private final DreamscapePortalBlock.Size size;
+        private final FracturedRealityPortalBlock.Size size;
 
-        public PortalSpawnEvent(LevelAccessor world, BlockPos pos, BlockState state, DreamscapePortalBlock.Size size) {
+        public PortalSpawnEvent(LevelAccessor world, BlockPos pos, BlockState state, FracturedRealityPortalBlock.Size size) {
             super(world, pos, state);
             this.size = size;
         }
 
-        public DreamscapePortalBlock.Size getPortalSize()
+        public FracturedRealityPortalBlock.Size getPortalSize()
         {
             return size;
         }
     }
 
     @Nullable
-    public DreamscapePortalBlock.Size isPortal(LevelAccessor worldIn, BlockPos pos) {
-        DreamscapePortalBlock.Size KJPortalBlock$size = new Size(worldIn, pos, Direction.Axis.X);
-        if (KJPortalBlock$size.isValid() && KJPortalBlock$size.portalBlockCount == 0) {
-            return KJPortalBlock$size;
+    public FracturedRealityPortalBlock.Size isPortal(LevelAccessor worldIn, BlockPos pos) {
+        FracturedRealityPortalBlock.Size FRPortalBlock$size = new Size(worldIn, pos, Direction.Axis.X);
+        if (FRPortalBlock$size.isValid() && FRPortalBlock$size.portalBlockCount == 0) {
+            return FRPortalBlock$size;
         } else {
-            DreamscapePortalBlock.Size KaupenPortalBlock$size1 = new Size(worldIn, pos, Direction.Axis.Z);
-            return KaupenPortalBlock$size1.isValid() && KaupenPortalBlock$size1.portalBlockCount == 0 ? KaupenPortalBlock$size1 : null;
+            FracturedRealityPortalBlock.Size FracturedPortalBlock$size1 = new Size(worldIn, pos, Direction.Axis.Z);
+            return FracturedPortalBlock$size1.isValid() && FracturedPortalBlock$size1.portalBlockCount == 0 ? FracturedPortalBlock$size1 : null;
         }
     }
 
@@ -127,7 +127,7 @@ public class DreamscapePortalBlock extends Block {
                     if(minecraftserver != null) {
                         ServerLevel destinationWorld = minecraftserver.getLevel(destination);
                         if(destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
-                            entity.level.getProfiler().push("kaupen_portal");
+                            entity.level.getProfiler().push("fractured_reality_portal");
                             entity.setPortalCooldown();
                             entity.changeDimension(destinationWorld, new ModTeleporter(destinationWorld));
                             entity.level.getProfiler().pop();
@@ -270,7 +270,7 @@ public class DreamscapePortalBlock extends Block {
                     }
 
                     Block block = blockstate.getBlock();
-                    if (block == ModBlocksAndItems.DREAMSCAPE_PORTAL.get()) {
+                    if (block == ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get()) {
                         ++this.portalBlockCount;
                     }
 
@@ -308,7 +308,7 @@ public class DreamscapePortalBlock extends Block {
 
         protected boolean canConnect(BlockState pos) {
             Block block = pos.getBlock();
-            return pos.isAir() || block == ModBlocksAndItems.DREAMSCAPE_PORTAL.get();
+            return pos.isAir() || block == ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get();
         }
 
         public boolean isValid() {
@@ -320,7 +320,7 @@ public class DreamscapePortalBlock extends Block {
                 BlockPos blockpos = this.bottomLeft.relative(this.rightDir, i);
 
                 for(int j = 0; j < this.height; ++j) {
-                    this.level.setBlock(blockpos.above(j), ModBlocksAndItems.DREAMSCAPE_PORTAL.get().defaultBlockState().setValue(DreamscapePortalBlock.AXIS, this.axis), 18);
+                    this.level.setBlock(blockpos.above(j), ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get().defaultBlockState().setValue(FracturedRealityPortalBlock.AXIS, this.axis), 18);
                 }
             }
 

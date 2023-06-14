@@ -27,7 +27,7 @@ public class DreamscapeDimensionSkybox extends DimensionSpecialEffects {
         return false;
     }
     public static class DreamscapeSkyRenderer implements ISkyRenderHandler {
-        private static final ResourceLocation TEXTURE = new ResourceLocation(dmich9sMod.MOD_ID, "textures/environment/dreamscape_skybox.png");
+        private static final ResourceLocation TEXTURE = new ResourceLocation(dmich9sMod.MOD_ID, "textures/environment/fractured_skybox.png");
         @Override
         public void render(int ticks, float partialTick, PoseStack poseStack, ClientLevel level, Minecraft minecraft) {
 

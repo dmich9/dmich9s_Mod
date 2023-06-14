@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "dmich9smod:block/fractured_reality_portal_ns"
+    },
+    "axis=z": {
+      "model": "dmich9smod:block/fractured_reality_portal_ew"
+    }
+  }
+}

@@ -3,6 +3,7 @@ package net.dylan.dmich9smod.init;
 import net.dylan.dmich9smod.api.block.ModWoodTypes;
 import net.dylan.dmich9smod.common.block.*;
 import net.dylan.dmich9smod.common.block.trees.*;
+import net.dylan.dmich9smod.common.entity.ModEntityTypes;
 import net.dylan.dmich9smod.common.item.*;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.dylan.dmich9smod.common.entity.ModBoatEntity;
@@ -10,8 +11,6 @@ import net.dylan.dmich9smod.common.util.ModCreativeModeTab;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -184,7 +184,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Item> FRACTURED_SIGN_ITEM = ITEMS.register("fractured_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.FRACTURED_SIGN.get(), ModBlocksAndItems.FRACTURED_WALL_SIGN.get()));
     public static final RegistryObject<Item> FRACTURED_BOAT = ITEMS.register("fractured_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.FRACTURED));
     public static final RegistryObject<Item> FRACTURED_SHARD = ITEMS.register("fractured_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
-    public static final RegistryObject<Block> FRACTURED_SAPLING = registerBlock("fractured_sapling", () -> new SaplingBlock(new FracturedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
+    public static final RegistryObject<Block> FRACTURED_SAPLING = registerBlock("fractured_sapling", () -> new ModSaplingBlock(new FracturedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING), () -> Blocks.END_STONE,ModBlocksAndItems.OVERGROWN_END_STONE), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> FRACTURED_LEAVES = registerBlock("fractured_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log", () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood", () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.COURSE_TAB);
@@ -380,11 +380,16 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Item> RAW_SUSPICIOUS_MEAT = ITEMS.register("raw_suspicious_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.RAW_SUSPICIOUS_MEAT)));
     public static final RegistryObject<Item> COOKED_SUSPICIOUS_MEAT = ITEMS.register("cooked_suspicious_meat", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFoods.COOKED_SUSPICIOUS_MEAT)));
 
-    public static final RegistryObject<Block> DREAMSCAPE_PORTAL = BLOCKS.register("dreamscape_portal", DreamscapePortalBlock::new);
-    public static final RegistryObject<Block> DREAMSCAPE_PORTAL_FRAME = registerBlock("dreamscape_portal_frame", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f)), ModCreativeModeTab.COURSE_TAB);
+    public static final RegistryObject<Block> FRACTURED_REALITY_PORTAL = BLOCKS.register("fractured_reality_portal", FracturedRealityPortalBlock::new);
+    public static final RegistryObject<Block> FRACTURED_REALITY_PORTAL_FRAME = registerBlock("fractured_reality_portal_frame", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Item> CATALYST_ITEM_PLACEHOLDER = ITEMS.register("catalyst_item_placeholder", CatalystItem::new);
     public static final RegistryObject<Block> DUNGEON_LADDER = registerBlock("dungeon_ladder", () -> new ModLadderBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.4F).sound(SoundType.LADDER).noOcclusion()),ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> DREAMSCAPE_OVERGROWTH = registerBlock("dreamscape_overgrowth", () -> new DreamscapeOvergrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.GLOW_LICHEN).noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).lightLevel(DreamscapeOvergrowthBlock.emission(0))),ModCreativeModeTab.COURSE_TAB);
+    public static final RegistryObject<ForgeSpawnEggItem> CORRUPTED_ZOMBIE_SPAWN_EGG = ITEMS.register("corrupted_zombie_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CORRUPTED_ZOMBIE, 0x8d00b8,0x3700b8, new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<ForgeSpawnEggItem> THUNDERBIRD_SPAWN_EGG = ITEMS.register("thunderbird_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.THUNDERBIRD, 0x003bcf,0x00b0e6, new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<ForgeSpawnEggItem> FRACTURED_WANDERER_SPAWN_EGG = ITEMS.register("fractured_wanderer_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.FRACTURED_WANDERER, 0x630000,0xd13b3b, new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<ForgeSpawnEggItem> SAND_ELEMENTAL_SPAWN_EGG = ITEMS.register("sand_elemental_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SAND_ELEMENTAL, 0xb09615,0xd1c847, new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+    public static final RegistryObject<ForgeSpawnEggItem> CRYSTAL_GOLEM_SPAWN_EGG = ITEMS.register("crystal_golem_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CRYSTAL_GOLEM, 0xa8a8a8,0xff29bf, new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {RegistryObject<T> toReturn = BLOCKS.register(name, block);registerBlockItem(name, toReturn, tab);return toReturn;}
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {return ModBlocksAndItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));}

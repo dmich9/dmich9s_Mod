@@ -1,5 +1,5 @@
 package net.dylan.dmich9smod.common.util;
-import net.dylan.dmich9smod.common.block.DreamscapePortalBlock;
+import net.dylan.dmich9smod.common.block.FracturedRealityPortalBlock;
 import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.ModBlocksAndItems;
 import net.minecraft.BlockUtil;
@@ -39,7 +39,7 @@ public class ModTeleporter implements ITeleporter {
         PoiManager poiManager = this.level.getPoiManager();
         poiManager.ensureLoadedAndValid(this.level, pos, 64);
         Optional<PoiRecord> optional = poiManager.getInSquare((poiType) ->
-                poiType == ModPOIs.DREAMSCAPE_PORTAL.get(), pos, 64, PoiManager.Occupancy.ANY).sorted(Comparator.<PoiRecord>comparingDouble((poi) ->
+                poiType == ModPOIs.FRACTURED_REALITY_PORTAL.get(), pos, 64, PoiManager.Occupancy.ANY).sorted(Comparator.<PoiRecord>comparingDouble((poi) ->
                 poi.getPos().distSqr(pos)).thenComparingInt((poi) ->
                 poi.getPos().getY())).filter((poi) ->
                 this.level.getBlockState(poi.getPos()).hasProperty(BlockStateProperties.HORIZONTAL_AXIS)).findFirst();
@@ -112,7 +112,7 @@ public class ModTeleporter implements ITeleporter {
             for(int l1 = -1; l1 < 2; ++l1) {
                 for(int k2 = 0; k2 < 2; ++k2) {
                     for(int i3 = -1; i3 < 3; ++i3) {
-                        BlockState blockstate1 = i3 < 0 ? ModBlocksAndItems.DREAMSCAPE_PORTAL_FRAME.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
+                        BlockState blockstate1 = i3 < 0 ? ModBlocksAndItems.FRACTURED_REALITY_PORTAL_FRAME.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
                         mutablePos.setWithOffset(blockpos, k2 * direction.getStepX() + l1 * direction1.getStepX(), i3, k2 * direction.getStepZ() + l1 * direction1.getStepZ());
                         this.level.setBlockAndUpdate(mutablePos, blockstate1);
                     }
@@ -124,12 +124,12 @@ public class ModTeleporter implements ITeleporter {
             for(int i2 = -1; i2 < 4; ++i2) {
                 if (k1 == -1 || k1 == 2 || i2 == -1 || i2 == 3) {
                     mutablePos.setWithOffset(blockpos, k1 * direction.getStepX(), i2, k1 * direction.getStepZ());
-                    this.level.setBlock(mutablePos, ModBlocksAndItems.DREAMSCAPE_PORTAL_FRAME.get().defaultBlockState(), 3);
+                    this.level.setBlock(mutablePos, ModBlocksAndItems.FRACTURED_REALITY_PORTAL_FRAME.get().defaultBlockState(), 3);
                 }
             }
         }
 
-        BlockState dreamscapePortal = ModBlocksAndItems.DREAMSCAPE_PORTAL.get().defaultBlockState().setValue(DreamscapePortalBlock.AXIS, axis);
+        BlockState dreamscapePortal = ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get().defaultBlockState().setValue(FracturedRealityPortalBlock.AXIS, axis);
 
         for(int j2 = 0; j2 < 2; ++j2) {
             for(int l2 = 0; l2 < 3; ++l2) {
@@ -200,7 +200,7 @@ public class ModTeleporter implements ITeleporter {
             return existingPortal;
         }
         else {
-            Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(DreamscapePortalBlock.AXIS).orElse(Direction.Axis.X);
+            Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(FracturedRealityPortalBlock.AXIS).orElse(Direction.Axis.X);
             return this.makePortal(pos, portalAxis);
         }
     }

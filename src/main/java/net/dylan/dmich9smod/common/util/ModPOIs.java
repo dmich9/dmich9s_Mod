@@ -11,9 +11,9 @@ public class ModPOIs {
     public static final DeferredRegister<PoiType> POI
             = DeferredRegister.create(ForgeRegistries.POI_TYPES, dmich9sMod.MOD_ID);
 
-    public static final RegistryObject<PoiType> DREAMSCAPE_PORTAL =
-            POI.register("dreamscape_portal", () -> new PoiType("dreamscape_portal",
-                    PoiType.getBlockStates(ModBlocksAndItems.DREAMSCAPE_PORTAL.get()), 0, 1));
+    public static final RegistryObject<PoiType> FRACTURED_REALITY_PORTAL =
+            POI.register("fractured_reality_portal", () -> new PoiType("fractured_reality_portal",
+                    PoiType.getBlockStates(ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get()), 0, 1));
 
 
     public static void register(IEventBus eventBus) {

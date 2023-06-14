@@ -2,6 +2,8 @@ package net.dylan.dmich9smod.core;
 
 import com.mojang.logging.LogUtils;
 //import net.dylan.dmich9smod.common.worldgen.ModStructures;
+import net.dylan.dmich9smod.client.FracturedWandererModel;
+import net.dylan.dmich9smod.client.renderer.*;
 import net.dylan.dmich9smod.common.util.ModPOIs;
 import net.dylan.dmich9smod.common.worldgen.biomes.RegionData;
 import net.dylan.dmich9smod.common.worldgen.biomes.SurfaceRuleData;
@@ -10,7 +12,6 @@ import net.dylan.dmich9smod.init.*;
 import net.dylan.dmich9smod.api.block.ModWoodTypes;
 import net.dylan.dmich9smod.api.block.ModBlockEntities;
 import net.dylan.dmich9smod.common.entity.ModEntityTypes;
-import net.dylan.dmich9smod.client.renderer.ModBoatRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -66,7 +67,7 @@ public class dmich9sMod
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.END_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.NETHER_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DUNGEON_LADDER.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DREAMSCAPE_PORTAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.FRACTURED_REALITY_PORTAL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.DREAMSCAPE_OVERGROWTH.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.ANGUISH_DOOR.get(), RenderType.cutout());
@@ -114,7 +115,6 @@ public class dmich9sMod
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.END_GRASS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocksAndItems.END_TALL_GRASS.get(), RenderType.cutout());
 
-
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SPRING_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SPRING_WATER_FLUID.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SPRING_WATER_FLOWING.get(), RenderType.translucent());
@@ -131,7 +131,13 @@ public class dmich9sMod
         BlockEntityRenderers.register(ModBlockEntities.DREAM_SIGN_BLOCK_ENTITY.get(), SignRenderer::new);
         BlockEntityRenderers.register(ModBlockEntities.FRACTURED_SIGN_BLOCK_ENTITY.get(), SignRenderer::new);
         BlockEntityRenderers.register(ModBlockEntities.MAPLE_SIGN_BLOCK_ENTITY.get(), SignRenderer::new);
+
         EntityRenderers.register(ModEntityTypes.BOAT_ENTITY.get(), ModBoatRenderer::new);
+        EntityRenderers.register(ModEntityTypes.CORRUPTED_ZOMBIE.get(), CorruptedZombieRenderer::new);
+        EntityRenderers.register(ModEntityTypes.THUNDERBIRD.get(), ThunderbirdRenderer::new);
+        EntityRenderers.register(ModEntityTypes.FRACTURED_WANDERER.get(), FracturedWandererRenderer::new);
+        EntityRenderers.register(ModEntityTypes.SAND_ELEMENTAL.get(), SandElementalRenderer::new);
+        EntityRenderers.register(ModEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
     }
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
@@ -181,10 +187,8 @@ public class dmich9sMod
             Regions.register(new RegionData(new ResourceLocation(MOD_ID, "overworld"), 2));
             
             // Register our surface rules
-            /*SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules*/
-            // Given we only add two biomes, we should keep our weight relatively low.
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, SurfaceRuleData.makeRules());
+            SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules
 
 
         });
