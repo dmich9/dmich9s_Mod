@@ -1,3 +1,7 @@
+/**
+ * (c) skyjay1 2023
+ * GNU LGPLv3
+ **/
 package net.dylan.dmich9smod.common.entity;
 
 import net.minecraft.core.BlockPos;
@@ -21,11 +25,12 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class SandElementalEntity extends Monster implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class CrystalGolem extends Monster implements IAnimatable {
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public SandElementalEntity(EntityType<? extends Monster> entityType, Level level) {
+    public CrystalGolem(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 

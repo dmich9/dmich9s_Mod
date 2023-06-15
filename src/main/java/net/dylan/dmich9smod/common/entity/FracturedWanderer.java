@@ -1,3 +1,7 @@
+/**
+ * (c) skyjay1 2023
+ * GNU LGPLv3
+ **/
 package net.dylan.dmich9smod.common.entity;
 
 import net.minecraft.core.BlockPos;
@@ -35,7 +39,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class FracturedWandererEntity extends Monster implements NeutralMob, IAnimatable {
+public class FracturedWanderer extends Monster implements NeutralMob, IAnimatable {
 
     // NEUTRAL MOB //
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
@@ -47,7 +51,7 @@ public class FracturedWandererEntity extends Monster implements NeutralMob, IAni
     private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
     private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
 
-    public FracturedWandererEntity(EntityType<? extends Monster> entityType, Level level) {
+    public FracturedWanderer(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 

@@ -1,12 +1,10 @@
 package net.dylan.dmich9smod.init;
 
-import net.dylan.dmich9smod.api.block.ModWoodTypes;
 import net.dylan.dmich9smod.common.block.*;
 import net.dylan.dmich9smod.common.block.trees.*;
-import net.dylan.dmich9smod.common.entity.ModEntityTypes;
 import net.dylan.dmich9smod.common.item.*;
 import net.dylan.dmich9smod.core.dmich9sMod;
-import net.dylan.dmich9smod.common.entity.ModBoatEntity;
+import net.dylan.dmich9smod.common.entity.ModBoat;
 import net.dylan.dmich9smod.common.util.ModCreativeModeTab;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -102,7 +100,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> ANGUISH_SIGN = BLOCKS.register("anguish_sign", () -> new AnguishStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.ANGUISH));
     public static final RegistryObject<Block> ANGUISH_WALL_SIGN = BLOCKS.register("anguish_wall_sign", () -> new AnguishWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.ANGUISH));
     public static final RegistryObject<Item> ANGUISH_SIGN_ITEM = ITEMS.register("anguish_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.ANGUISH_SIGN.get(), ModBlocksAndItems.ANGUISH_WALL_SIGN.get()));
-    public static final RegistryObject<Item> ANGUISH_BOAT = ITEMS.register("anguish_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.ANGUISH));
+    public static final RegistryObject<Item> ANGUISH_BOAT = ITEMS.register("anguish_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.ANGUISH));
     public static final RegistryObject<Item> ANGUISH_SHARD = ITEMS.register("anguish_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> ANGUISH_SAPLING = registerBlock("anguish_sapling", () -> new SaplingBlock(new AnguishTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> ANGUISH_LEAVES = registerBlock("anguish_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
@@ -122,7 +120,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> FRIGHT_SIGN = BLOCKS.register("fright_sign", () -> new FrightStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.FRIGHT));
     public static final RegistryObject<Block> FRIGHT_WALL_SIGN = BLOCKS.register("fright_wall_sign", () -> new FrightWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.FRIGHT));
     public static final RegistryObject<Item> FRIGHT_SIGN_ITEM = ITEMS.register("fright_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.FRIGHT_SIGN.get(), ModBlocksAndItems.FRIGHT_WALL_SIGN.get()));
-    public static final RegistryObject<Item> FRIGHT_BOAT = ITEMS.register("fright_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.FRIGHT));
+    public static final RegistryObject<Item> FRIGHT_BOAT = ITEMS.register("fright_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.FRIGHT));
     public static final RegistryObject<Item> FRIGHT_SHARD = ITEMS.register("fright_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> FRIGHT_SAPLING = registerBlock("fright_sapling", () -> new SaplingBlock(new FrightTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> FRIGHT_LEAVES = registerBlock("fright_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
@@ -142,7 +140,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> MIGHT_SIGN = BLOCKS.register("might_sign", () -> new MightStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.MIGHT));
     public static final RegistryObject<Block> MIGHT_WALL_SIGN = BLOCKS.register("might_wall_sign", () -> new MightWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.MIGHT));
     public static final RegistryObject<Item> MIGHT_SIGN_ITEM = ITEMS.register("might_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.MIGHT_SIGN.get(), ModBlocksAndItems.MIGHT_WALL_SIGN.get()));
-    public static final RegistryObject<Item> MIGHT_BOAT = ITEMS.register("might_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.MIGHT));
+    public static final RegistryObject<Item> MIGHT_BOAT = ITEMS.register("might_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.MIGHT));
     public static final RegistryObject<Item> MIGHT_SHARD = ITEMS.register("might_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> MIGHT_SAPLING = registerBlock("might_sapling", () -> new SaplingBlock(new MightTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> MIGHT_LEAVES = registerBlock("might_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
@@ -162,7 +160,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> DREAM_SIGN = BLOCKS.register("dream_sign", () -> new DreamStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.DREAM));
     public static final RegistryObject<Block> DREAM_WALL_SIGN = BLOCKS.register("dream_wall_sign", () -> new DreamWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.DREAM));
     public static final RegistryObject<Item> DREAM_SIGN_ITEM = ITEMS.register("dream_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.DREAM_SIGN.get(), ModBlocksAndItems.DREAM_WALL_SIGN.get()));
-    public static final RegistryObject<Item> DREAM_BOAT = ITEMS.register("dream_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.DREAM));
+    public static final RegistryObject<Item> DREAM_BOAT = ITEMS.register("dream_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.DREAM));
     public static final RegistryObject<Item> DREAM_SHARD = ITEMS.register("dream_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> DREAM_SAPLING = registerBlock("dream_sapling", () -> new SaplingBlock(new DreamTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> DREAM_LEAVES = registerBlock("dream_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
@@ -182,7 +180,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> FRACTURED_SIGN = BLOCKS.register("fractured_sign", () -> new FracturedStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.FRACTURED));
     public static final RegistryObject<Block> FRACTURED_WALL_SIGN = BLOCKS.register("fractured_wall_sign", () -> new FracturedWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.FRACTURED));
     public static final RegistryObject<Item> FRACTURED_SIGN_ITEM = ITEMS.register("fractured_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.FRACTURED_SIGN.get(), ModBlocksAndItems.FRACTURED_WALL_SIGN.get()));
-    public static final RegistryObject<Item> FRACTURED_BOAT = ITEMS.register("fractured_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.FRACTURED));
+    public static final RegistryObject<Item> FRACTURED_BOAT = ITEMS.register("fractured_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.FRACTURED));
     public static final RegistryObject<Item> FRACTURED_SHARD = ITEMS.register("fractured_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> FRACTURED_SAPLING = registerBlock("fractured_sapling", () -> new ModSaplingBlock(new FracturedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING), () -> Blocks.END_STONE,ModBlocksAndItems.OVERGROWN_END_STONE), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> FRACTURED_LEAVES = registerBlock("fractured_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);
@@ -202,7 +200,7 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> MAPLE_SIGN = BLOCKS.register("maple_sign", () -> new MapleStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.MAPLE));
     public static final RegistryObject<Block> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign", () -> new MapleWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1f).noCollission(), ModWoodTypes.MAPLE));
     public static final RegistryObject<Item> MAPLE_SIGN_ITEM = ITEMS.register("maple_sign", () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).stacksTo(16), ModBlocksAndItems.MAPLE_SIGN.get(), ModBlocksAndItems.MAPLE_WALL_SIGN.get()));
-    public static final RegistryObject<Item> MAPLE_BOAT = ITEMS.register("maple_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoatEntity.Type.MAPLE));
+    public static final RegistryObject<Item> MAPLE_BOAT = ITEMS.register("maple_boat", () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB), ModBoat.Type.MAPLE));
     public static final RegistryObject<Item> MAPLE_SHARD = ITEMS.register("maple_shard", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
     public static final RegistryObject<Block> MAPLE_SAPLING_YELLOW = registerBlock("maple_sapling_yellow", () -> new SaplingBlock(new YellowMapleTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> MAPLE_LEAVES_YELLOW = registerBlock("maple_leaves_yellow", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return true;}@Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {return 30;}}, ModCreativeModeTab.COURSE_TAB);

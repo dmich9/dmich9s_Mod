@@ -4,6 +4,8 @@ import net.dylan.dmich9smod.client.particle.EndTorchParticles;
 import net.dylan.dmich9smod.common.entity.*;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,11 +33,16 @@ public class ModEventBusEvents {
     }
     @SubscribeEvent
     public static void entityAtributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.CORRUPTED_ZOMBIE.get(), CorruptedZombieEntity.setAttributes());
-        event.put(ModEntityTypes.THUNDERBIRD.get(), ThunderbirdEntity.setAttributes());
-        event.put(ModEntityTypes.FRACTURED_WANDERER.get(), FracturedWandererEntity.setAttributes());
-        event.put(ModEntityTypes.SAND_ELEMENTAL.get(), SandElementalEntity.setAttributes());
-        event.put(ModEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemEntity.setAttributes());
+        event.put(ModEntityTypes.CORRUPTED_ZOMBIE.get(), CorruptedZombie.setAttributes());
+        event.put(ModEntityTypes.THUNDERBIRD.get(), Thunderbird.setAttributes());
+        event.put(ModEntityTypes.FRACTURED_WANDERER.get(), FracturedWanderer.setAttributes());
+        event.put(ModEntityTypes.SAND_ELEMENTAL.get(), SandElemental.setAttributes());
+        event.put(ModEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolem.setAttributes());
+        registerSpawnPlacements();
+    }
+
+    public static void registerSpawnPlacements() {
+        SpawnPlacements.register(ModEntityTypes.SAND_ELEMENTAL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SandElemental::canSandElementalSpawn);
     }
 
 }

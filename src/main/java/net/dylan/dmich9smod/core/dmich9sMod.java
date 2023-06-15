@@ -2,16 +2,15 @@ package net.dylan.dmich9smod.core;
 
 import com.mojang.logging.LogUtils;
 //import net.dylan.dmich9smod.common.worldgen.ModStructures;
-import net.dylan.dmich9smod.client.FracturedWandererModel;
 import net.dylan.dmich9smod.client.renderer.*;
 import net.dylan.dmich9smod.common.util.ModPOIs;
 import net.dylan.dmich9smod.common.worldgen.biomes.RegionData;
 import net.dylan.dmich9smod.common.worldgen.biomes.SurfaceRuleData;
 import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.*;
-import net.dylan.dmich9smod.api.block.ModWoodTypes;
-import net.dylan.dmich9smod.api.block.ModBlockEntities;
-import net.dylan.dmich9smod.common.entity.ModEntityTypes;
+import net.dylan.dmich9smod.init.ModWoodTypes;
+import net.dylan.dmich9smod.init.ModBlockEntities;
+import net.dylan.dmich9smod.init.ModEntityTypes;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -138,6 +137,7 @@ public class dmich9sMod
         EntityRenderers.register(ModEntityTypes.FRACTURED_WANDERER.get(), FracturedWandererRenderer::new);
         EntityRenderers.register(ModEntityTypes.SAND_ELEMENTAL.get(), SandElementalRenderer::new);
         EntityRenderers.register(ModEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
+        EntityRenderers.register(ModEntityTypes.SAND_BALL.get(), SandBallRenderer::new);
     }
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {

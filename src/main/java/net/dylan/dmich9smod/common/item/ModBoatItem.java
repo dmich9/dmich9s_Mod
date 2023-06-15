@@ -1,6 +1,6 @@
 package net.dylan.dmich9smod.common.item;
 
-import net.dylan.dmich9smod.common.entity.ModBoatEntity;
+import net.dylan.dmich9smod.common.entity.ModBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -20,9 +20,9 @@ import java.util.function.Predicate;
 
 public class ModBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::canBeCollidedWith);
-    private final ModBoatEntity.Type type;
+    private final ModBoat.Type type;
 
-    public ModBoatItem(Item.Properties properties, ModBoatEntity.Type typeIn) {
+    public ModBoatItem(Item.Properties properties, ModBoat.Type typeIn) {
         super(properties);
         this.type = typeIn;
     }
@@ -46,7 +46,7 @@ public class ModBoatItem extends Item {
                 }
             }
             if (raytraceresult.getType() == HitResult.Type.BLOCK) {
-                ModBoatEntity boatentity = new ModBoatEntity(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
+                ModBoat boatentity = new ModBoat(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
                 boatentity.setBoatType(this.type);
                 boatentity.setYRot(playerIn.getYRot());
                 if (!worldIn.noCollision(boatentity, boatentity.getBoundingBox().inflate(-0.1D))) {

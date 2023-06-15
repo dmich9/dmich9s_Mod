@@ -1,3 +1,7 @@
+/**
+ * (c) skyjay1 2023
+ * GNU LGPLv3
+ **/
 package net.dylan.dmich9smod.common.entity;
 
 import net.minecraft.core.BlockPos;
@@ -21,11 +25,12 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class ThunderbirdEntity extends Monster implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class Thunderbird extends Monster implements IAnimatable {
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public ThunderbirdEntity(EntityType<? extends Monster> entityType, Level level) {
+    public Thunderbird(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -40,30 +45,33 @@ public class ThunderbirdEntity extends Monster implements IAnimatable {
                 .build();
     }
 
+    @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new MeleeAttackGoal(this,1.0D,false));
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class,8.0F));
     }
 
     @Nullable
-
-
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);
     }
 
+    @Override
     protected SoundEvent getAmbientSound() {
         return SoundEvents.ZOMBIE_AMBIENT;
     }
 
+    @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
         return SoundEvents.ZOMBIE_HURT;
     }
 
+    @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.ZOMBIE_DEATH;
     }
 
+    @Override
     protected float getSoundVolume() {
         return 0.2F;
     }

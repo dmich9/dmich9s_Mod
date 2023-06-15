@@ -1,3 +1,7 @@
+/**
+ * (c) skyjay1 2023
+ * GNU LGPLv3
+ **/
 package net.dylan.dmich9smod.common.entity;
 
 import net.minecraft.core.BlockPos;
@@ -19,8 +23,6 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
@@ -43,17 +45,17 @@ import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.List;
 
-public class CorruptedZombieEntity extends Monster implements IAnimatable {
+public class CorruptedZombie extends Monster implements IAnimatable {
 
     // GECKOLIB //
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
     private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
 
     // OTHER //
     private static final AttributeModifier CHARGE_SPEED_MODIFIER = new AttributeModifier("Charge movement speed", 1.72D, AttributeModifier.Operation.MULTIPLY_BASE);
 
-    public CorruptedZombieEntity(EntityType<? extends Monster> entityType, Level level) {
+    public CorruptedZombie(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -68,11 +70,11 @@ public class CorruptedZombieEntity extends Monster implements IAnimatable {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new CorruptedZombieEntity.InertGoal(this));
+        this.goalSelector.addGoal(0, new CorruptedZombie.InertGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this,1.0D,false));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class,8.0F));
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(0, new TargetLookingGoal(this, 15));
+        this.targetSelector.addGoal(0, new TargetLookingGoal(this, 12));
     }
 
     @Override
@@ -151,7 +153,6 @@ public class CorruptedZombieEntity extends Monster implements IAnimatable {
     public AnimationFactory getFactory() {
         return factory;
     }
-
 
     //// GOALS ////
 
