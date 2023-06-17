@@ -30,19 +30,22 @@ public class ModEntityTypes {
                     .sized(0.6F, 1.95F).build("corrupted_zombie"));
     public static final RegistryObject<EntityType<Thunderbird>> THUNDERBIRD = ENTITY_TYPES.register("thunderbird",
             () -> EntityType.Builder.of(Thunderbird::new, MobCategory.MONSTER)
-                    .sized(0.8f, 0.6f).build("thunderbird"));
+                    .sized(0.8f, 1.6f).build("thunderbird"));
     public static final RegistryObject<EntityType<FracturedWanderer>> FRACTURED_WANDERER = ENTITY_TYPES.register("fractured_wanderer",
             () -> EntityType.Builder.of(FracturedWanderer::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F).build("fractured_wanderer"));
     public static final RegistryObject<EntityType<SandElemental>> SAND_ELEMENTAL = ENTITY_TYPES.register("sand_elemental",
             () -> EntityType.Builder.of(SandElemental::new, MobCategory.MONSTER)
+                    .fireImmune()
                     .sized(0.6F, 1.95F).build("sand_elemental"));
     public static final RegistryObject<EntityType<CrystalGolem>> CRYSTAL_GOLEM = ENTITY_TYPES.register("crystal_golem",
             () -> EntityType.Builder.of(CrystalGolem::new, MobCategory.MONSTER)
-                    .sized(0.8f, 0.6f).build("crystal_golem"));
+                    .fireImmune()
+                    .sized(0.8f, 1.6f).build("crystal_golem"));
     public static final RegistryObject<EntityType<SandBall>> SAND_BALL = ENTITY_TYPES.register("sand_ball",
             () -> EntityType.Builder.<SandBall>of(SandBall::new, MobCategory.MISC)
-                    .sized(0.25f, 0.25f).build("sand_ball"));
+                    .fireImmune().clientTrackingRange(4).updateInterval(10)
+                    .sized(0.248f, 0.248f).build("sand_ball"));
 
 
 

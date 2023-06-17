@@ -91,8 +91,6 @@ public class SandElemental extends Monster implements FlyingAnimal, RangedAttack
 
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-        // TODO remove after testing
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, IronGolem.class, false));
     }
 
     @Override
