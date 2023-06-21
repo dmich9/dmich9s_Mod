@@ -1,4 +1,4 @@
-package net.dylan.dmich9smod.api.block;
+package net.dylan.dmich9smod.init;
 
 import net.minecraft.world.level.block.state.properties.WoodType;
 

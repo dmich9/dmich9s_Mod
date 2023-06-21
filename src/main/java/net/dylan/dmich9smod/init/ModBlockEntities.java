@@ -1,6 +1,5 @@
-package net.dylan.dmich9smod.api.block;
+package net.dylan.dmich9smod.init;
 
-import net.dylan.dmich9smod.init.ModBlocksAndItems;
 import net.dylan.dmich9smod.common.block.*;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.minecraft.world.level.block.entity.BlockEntityType;

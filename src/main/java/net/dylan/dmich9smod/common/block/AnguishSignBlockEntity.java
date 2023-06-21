@@ -1,6 +1,6 @@
 package net.dylan.dmich9smod.common.block;
 
-import net.dylan.dmich9smod.api.block.ModBlockEntities;
+import net.dylan.dmich9smod.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SignBlockEntity;

@@ -1,6 +1,6 @@
 package net.dylan.dmich9smod.common.events;
 
-import net.dylan.dmich9smod.api.TonisHelper;
+import net.dylan.dmich9smod.common.util.TonisHelper;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.dylan.dmich9smod.init.ModEffects;
 import net.dylan.dmich9smod.init.ModFluids;
@@ -73,7 +73,7 @@ public class EffectEvents {
 
             if(Mth.randomBetweenInclusive(new Random(), 10, 35) == 25) {
                 BlockPos targetPos = entity.blockPosition();
-                EntityType entityType = TonisHelper.randomEntity();
+                EntityType entityType = TonisHelper.randomEntity(entity.getRandom());
                 BlockPos spawnPos = TonisHelper.findOnGroundSpawnLocation(entity.level, entityType, targetPos, 20);
 
                 if (spawnPos != null)
