@@ -1,0 +1,17 @@
+{
+  "feature": "dmich9smod:dream_tree",
+  "placement": [
+    {
+      "predicate": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "dmich9smod:dream_sapling"
+        },
+        "type": "minecraft:would_survive"
+      },
+      "type": "minecraft:block_predicate_filter"
+    }
+  ]
+}

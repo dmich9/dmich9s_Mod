@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:village",
+  "config": {
+    "start_pool": "dmich9smod:giant_tree",
+    "size": 1
+  },
+  "biomes": "#dmich9smod:has_structure/giant_tree",
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

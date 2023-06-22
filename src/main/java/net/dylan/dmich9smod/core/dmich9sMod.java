@@ -34,7 +34,7 @@ import terrablender.api.SurfaceRuleManager;
 @Mod(dmich9sMod.MOD_ID)
 public class dmich9sMod
 {
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static final String MOD_ID = "dmich9smod";
 
     public dmich9sMod()
@@ -50,6 +50,7 @@ public class dmich9sMod
         ModPaintings.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModEntityTypes.register(eventBus);
+        ModFeatures.register(eventBus);
         ModStructures.register(eventBus);
         ModDimensions.register();
         ModBlocksAndItems.register(eventBus);
