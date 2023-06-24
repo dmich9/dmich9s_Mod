@@ -42,7 +42,11 @@ public class ModEventBusEvents {
     }
 
     public static void registerSpawnPlacements() {
+        SpawnPlacements.register(ModEntityTypes.CORRUPTED_ZOMBIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, CorruptedZombie::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.THUNDERBIRD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Thunderbird::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.FRACTURED_WANDERER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FracturedWanderer::checkMonsterSpawnRules);
         SpawnPlacements.register(ModEntityTypes.SAND_ELEMENTAL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SandElemental::canSandElementalSpawn);
+        SpawnPlacements.register(ModEntityTypes.CRYSTAL_GOLEM.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, CrystalGolem::canCrystalGolemSpawn);
     }
 
 }

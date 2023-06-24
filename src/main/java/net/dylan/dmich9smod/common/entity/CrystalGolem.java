@@ -11,10 +11,12 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -29,6 +31,7 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -45,6 +48,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class CrystalGolem extends Monster implements IAnimatable {
@@ -82,6 +86,10 @@ public class CrystalGolem extends Monster implements IAnimatable {
                 .add(Attributes.MAX_HEALTH, 80.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
                 .build();
+    }
+
+    public static boolean canCrystalGolemSpawn(EntityType<? extends CrystalGolem> entityType, ServerLevelAccessor level, MobSpawnType mobSpawnType, BlockPos pos, Random random) {
+        return pos.getY() < level.getSeaLevel() && !level.canSeeSky(pos.above()) && Monster.checkMonsterSpawnRules(entityType, level, mobSpawnType, pos, random);
     }
 
     @Override

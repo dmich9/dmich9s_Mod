@@ -8,6 +8,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.Nullable;
 
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
@@ -33,7 +34,7 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     @Nullable
     @Override
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-        if(context.getItemInHand().getItem() instanceof AxeItem) {
+        if(ToolActions.AXE_STRIP.equals(toolAction)) {
             if(state.is(ModBlocksAndItems.ANGUISH_LOG.get())) {
                 return ModBlocksAndItems.STRIPPED_ANGUISH_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }

@@ -3,7 +3,7 @@
   "generator": {
     "type": "minecraft:noise",
     "seed": 1141623650,
-    "settings": "minecraft:overworld",
+    "settings": "dmich9smod:fractured_reality",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [

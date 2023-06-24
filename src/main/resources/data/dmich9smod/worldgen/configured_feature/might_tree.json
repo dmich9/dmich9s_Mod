@@ -1,0 +1,20 @@
+{
+  "type": "dmich9smod:template_pool",
+  "config": {
+    "processors": "minecraft:empty",
+    "structures": [
+      {
+        "data": "dmich9smod:giant_tree/might/might_tree_1",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:giant_tree/might/might_tree_2",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:giant_tree/might/might_tree_3",
+        "weight": 1
+      }
+    ]
+  }
+}

@@ -82,6 +82,18 @@
         "weight": 80,
         "minCount": 4,
         "maxCount": 4
+      },
+      {
+        "type": "dmich9smod:fractured_wanderer",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "dmich9smod:crystal_golem",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "creature": [
@@ -221,13 +233,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "dmich9smod:patch_dreamscape_grass",
+      "dmich9smod:patch_dreamscape_tall_grass",
+      "dmich9smod:trees_dream",
+      "dmich9smod:patch_dreamscape_buckweed",
+      "dmich9smod:patch_dreamscape_oxallis",
+      "dmich9smod:patch_dreamscape_tornbell",
+      "dmich9smod:patch_dreamscape_fern"
     ],
     [
       "minecraft:freeze_top_layer"

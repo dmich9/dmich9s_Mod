@@ -5,7 +5,6 @@ import com.mojang.logging.LogUtils;
 import net.dylan.dmich9smod.client.renderer.*;
 import net.dylan.dmich9smod.common.util.ModPOIs;
 import net.dylan.dmich9smod.common.worldgen.biomes.RegionData;
-import net.dylan.dmich9smod.common.worldgen.biomes.SurfaceRuleData;
 import net.dylan.dmich9smod.common.worldgen.dimension.ModDimensions;
 import net.dylan.dmich9smod.init.*;
 import net.dylan.dmich9smod.init.ModWoodTypes;
@@ -20,7 +19,6 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -29,7 +27,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 
 @Mod(dmich9sMod.MOD_ID)
 public class dmich9sMod
@@ -186,12 +183,6 @@ public class dmich9sMod
             Sheets.addWoodType(ModWoodTypes.FRACTURED);
             Sheets.addWoodType(ModWoodTypes.MAPLE);
             Regions.register(new RegionData(new ResourceLocation(MOD_ID, "overworld"), 2));
-            
-            // Register our surface rules
-            SurfaceRules.RuleSource overworldSurfaceRules = SurfaceRuleData.makeRules(); // Get the surface rules for the overworld
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, overworldSurfaceRules); // Add the overworld surface rules
-
-
         });
     }
 }
