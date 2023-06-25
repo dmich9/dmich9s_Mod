@@ -1,15 +1,9 @@
 {
-  "feature": "dmich9smod:asteroid",
+  "feature": "dmich9smod:ore_azurite",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 4,
-          "max_inclusive": 20
-        }
-      }
+      "count": 7
     },
     {
       "type": "minecraft:in_square"
@@ -22,7 +16,7 @@
           "above_bottom": 0
         },
         "max_inclusive": {
-          "below_top": 0
+          "below_top": 80
         }
       }
     },

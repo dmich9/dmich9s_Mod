@@ -13,7 +13,7 @@ public class CorruptedZombieRenderer extends GeoEntityRenderer<CorruptedZombie> 
 
     public CorruptedZombieRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new CorruptedZombieModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 0.4f;
     }
 
     @Override

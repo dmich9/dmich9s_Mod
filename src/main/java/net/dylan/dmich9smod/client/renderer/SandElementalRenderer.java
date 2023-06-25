@@ -13,7 +13,7 @@ public class SandElementalRenderer extends GeoEntityRenderer<SandElemental> {
 
     public SandElementalRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new SandElementalModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 0.4f;
     }
 
 }

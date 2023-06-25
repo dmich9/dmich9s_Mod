@@ -12,6 +12,6 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class ThunderbirdRenderer extends GeoEntityRenderer<Thunderbird> {
     public ThunderbirdRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new ThunderbirdModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 0.9f;
     }
 }

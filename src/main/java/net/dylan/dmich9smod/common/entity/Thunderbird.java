@@ -68,8 +68,8 @@ public class Thunderbird extends Monster implements FlyingAnimal, IAnimatable {
     
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE_STANDING = new AnimationBuilder().addAnimation("animation.dmich_tbird.standing", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE_FLYING = new AnimationBuilder().addAnimation("animation.dmich_tbird.flying", ILoopType.EDefaultLoopTypes.LOOP);
 
     // FLYING //
     private boolean wantsToFly;
@@ -85,8 +85,8 @@ public class Thunderbird extends Monster implements FlyingAnimal, IAnimatable {
     private boolean isNavigationDirty;
 
     // ATTACK //
-    private static final byte START_POWERED_EVENT = 11;
-    private static final byte POWERED_ATTACK_EVENT = 12;
+    private static final byte START_POWERED_EVENT = 61;
+    private static final byte POWERED_ATTACK_EVENT = 62;
     private static final int POWERED_ATTACK_DURATION = 65;
     private static final int MIN_POWERED_ATTACK_COOLDOWN = 180; // TODO balance
     private static final int MAX_POWERED_ATTACK_COOLDOWN = 250; // TODO balance
@@ -396,11 +396,11 @@ public class Thunderbird extends Monster implements FlyingAnimal, IAnimatable {
     //// ANIMATIONS ////
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(ANIM_ATTACKING);
-            return PlayState.CONTINUE;
+        if(!this.isOnGround()) {
+            event.getController().setAnimation(ANIM_IDLE_FLYING);
+        } else {
+            event.getController().setAnimation(ANIM_IDLE_STANDING);
         }
-        event.getController().setAnimation(ANIM_IDLE);
         return PlayState.CONTINUE;
     }
 
