@@ -1,0 +1,72 @@
+{
+  "type": "dmich9smod:template_pool",
+  "config": {
+    "processors": "minecraft:empty",
+    "structures": [
+      {
+        "data": "dmich9smod:asteroid/asteroid_1",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_2",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_3",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_4",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_5",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_6",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_7",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_8",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_9",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_10",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_11",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_12",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_13",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_14",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_15",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:asteroid/asteroid_16",
+        "weight": 1
+      }
+    ]
+  }
+}

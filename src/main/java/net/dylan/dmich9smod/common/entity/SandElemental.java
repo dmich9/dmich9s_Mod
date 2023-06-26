@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,20 +21,16 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.FlyingAnimal;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -52,8 +49,17 @@ public class SandElemental extends Monster implements FlyingAnimal, RangedAttack
 
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.s_elemental.idle", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_ATTACKING_MELEE = new AnimationBuilder().addAnimation("animation.s_elemental.attackingmelee", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+    private static final AnimationBuilder ANIM_ATTACKING_RANGED = new AnimationBuilder().addAnimation("animation.s_elemental.attackingdistance", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+    private static final int MELEE_ATTACK_DURATION = 10;
+    private static final int RANGED_ATTACK_DURATION = 10;
+    private byte animationEvent;
+    private int animationTime;
+
+    // EVENTS //
+    private static final byte START_MELEE_ATTACK_EVENT = 61;
+    private static final byte START_RANGED_ATTACK_EVENT = 62;
 
     // OTHER //
     private static final float MELEE_ATTACK_DISTANCE = 6.0F;
@@ -105,6 +111,9 @@ public class SandElemental extends Monster implements FlyingAnimal, RangedAttack
     @Override
     public void tick() {
         super.tick();
+        if(this.animationTime > 0) {
+            --this.animationTime;
+        }
     }
 
     //// FLYING ANIMAL ////
@@ -128,14 +137,13 @@ public class SandElemental extends Monster implements FlyingAnimal, RangedAttack
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        if (!level.isClientSide()) {
-            final float velocity = 0.88F;
-            SandBall projectile = new SandBall(this, level);
-            projectile.shootFromRotation(this, this.getXRot(), this.getYRot(), 0.0F, velocity, 0.4F);
-            projectile.getDeltaMovement().add(0, (target.distanceTo(this) / velocity) * projectile.getGravity() + target.getEyeHeight(), 0);
-            projectile.hurtMarked = true;
-            level.addFreshEntity(projectile);
-        }
+        final float velocity = 0.88F;
+        SandBall projectile = new SandBall(this, level);
+        projectile.shootFromRotation(this, this.getXRot(), this.getYRot(), 0.0F, velocity, 0.4F);
+        projectile.getDeltaMovement().add(0, (target.distanceTo(this) / velocity) * projectile.getGravity() + target.getEyeHeight(), 0);
+        projectile.hurtMarked = true;
+        level.addFreshEntity(projectile);
+        this.level.broadcastEntityEvent(this, START_RANGED_ATTACK_EVENT);
         this.playSound(SoundEvents.SNOWBALL_THROW, 1.2F, 1.0F);
     }
 
@@ -168,12 +176,45 @@ public class SandElemental extends Monster implements FlyingAnimal, RangedAttack
 
     //// ANIMATIONS ////
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(ANIM_ATTACKING);
-            return PlayState.CONTINUE;
+    @Override
+    public void handleEntityEvent(byte pId) {
+        switch(pId) {
+            case START_MELEE_ATTACK_EVENT:
+                this.animationEvent = pId;
+                this.animationTime = MELEE_ATTACK_DURATION;
+                break;
+            case START_RANGED_ATTACK_EVENT:
+                this.animationEvent = pId;
+                this.animationTime = RANGED_ATTACK_DURATION;
+                break;
+            default:
+                super.handleEntityEvent(pId);
         }
-        event.getController().setAnimation(ANIM_IDLE);
+    }
+
+    @Override
+    public void swing(InteractionHand pHand, boolean pUpdateSelf) {
+        super.swing(pHand, pUpdateSelf);
+        if(!level.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+            this.level.broadcastEntityEvent(this, START_MELEE_ATTACK_EVENT);
+        }
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if(animationTime > 0) {
+            switch (animationEvent) {
+                case START_MELEE_ATTACK_EVENT:
+                    event.getController().setAnimation(ANIM_ATTACKING_MELEE);
+                    break;
+                case START_RANGED_ATTACK_EVENT:
+                    event.getController().setAnimation(ANIM_ATTACKING_RANGED);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            event.getController().setAnimation(ANIM_IDLE);
+        }
         return PlayState.CONTINUE;
     }
 

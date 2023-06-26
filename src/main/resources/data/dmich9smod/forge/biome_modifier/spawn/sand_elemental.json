@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:desert",
+  "spawners":
+  {
+    "type": "dmich9smod:sand_elemental",
+    "weight": 80,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

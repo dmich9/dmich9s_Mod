@@ -1,11 +1,17 @@
 package net.dylan.dmich9smod.common.worldgen.structures;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.QuartPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.LegacyRandomSource;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.MineshaftConfiguration;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructureSets;
 import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
 import net.minecraft.world.level.levelgen.structure.PostPlacementProcessor;
@@ -19,9 +25,9 @@ import java.util.Optional;
 
 public class OverworldDungeon extends StructureFeature<JigsawConfiguration> {
 
-    public OverworldDungeon() {
+    public OverworldDungeon(final Codec<JigsawConfiguration> codec) {
         // Create the pieces layout of the structure and give it to the game
-        super(JigsawConfiguration.CODEC, OverworldDungeon::createPiecesGenerator, PostPlacementProcessor.NONE);
+        super(codec, OverworldDungeon::createPiecesGenerator, PostPlacementProcessor.NONE);
     }
     @Override
     public GenerationStep.Decoration step() {
@@ -29,9 +35,11 @@ public class OverworldDungeon extends StructureFeature<JigsawConfiguration> {
     }
 
     private static boolean isFeatureChunk(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
-        ChunkPos chunkpos = context.chunkPos();
-        return !context.chunkGenerator().hasFeatureChunkInRange(BuiltinStructureSets.OCEAN_MONUMENTS, context.seed(),
-                chunkpos.x, chunkpos.z, 10);
+            WorldgenRandom worldgenrandom = new WorldgenRandom(new LegacyRandomSource(0L));
+            worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
+            double failureChance = 0.25D;
+            final Vec3i pos = new Vec3i(QuartPos.fromBlock(context.chunkPos().getMiddleBlockX()), QuartPos.fromBlock(50), QuartPos.fromBlock(context.chunkPos().getMiddleBlockZ()));
+            return (worldgenrandom.nextDouble() >= failureChance) && context.validBiome().test(context.chunkGenerator().getNoiseBiome(pos.getX(), pos.getY(), pos.getZ()));
     }
 
     public static Optional<PieceGenerator<JigsawConfiguration>> createPiecesGenerator(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {

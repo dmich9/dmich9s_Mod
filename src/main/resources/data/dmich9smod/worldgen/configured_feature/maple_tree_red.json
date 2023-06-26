@@ -1,0 +1,20 @@
+{
+  "type": "dmich9smod:template_pool",
+  "config": {
+    "processors": "minecraft:empty",
+    "structures": [
+      {
+        "data": "dmich9smod:maple_tree/red/red_maple_tree_1",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:maple_tree/red/red_maple_tree_2",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:maple_tree/red/red_maple_tree_3",
+        "weight": 1
+      }
+    ]
+  }
+}

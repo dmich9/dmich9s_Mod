@@ -1,0 +1,231 @@
+{
+  "temperature": 1,
+  "downfall": 0,
+  "precipitation": "rain",
+  "category": "none",
+  "effects": {
+    "sky_color": 6826080,
+    "fog_color": 14204888,
+    "water_color": 6834020,
+    "water_fog_color": 14204888,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    },
+    "music": {
+      "sound": "dmich9smod:dreamscape",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:spider",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:zombie_villager",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:slime",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:witch",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:stray",
+        "weight": 80,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:husk",
+        "weight": 80,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "dmich9smod:fractured_wanderer",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "dmich9smod:crystal_golem",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:wolf",
+        "weight": 5,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:rabbit",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:polar_bear",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "minecraft:horse",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 6
+      },
+      {
+        "type": "minecraft:donkey",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "underground_water_creature": [
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 6
+      }
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
+    [
+      "minecraft:amethyst_geode"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [],
+    [
+      "dmich9smod:ore_ambrosia",
+      "dmich9smod:ore_azurite",
+      "dmich9smod:ore_carnelian",
+      "dmich9smod:ore_garnet",
+      "dmich9smod:ore_serendibite",
+      "dmich9smod:ore_strontium",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "dmich9smod:patch_end_grass",
+      "dmich9smod:patch_end_tall_grass",
+      "dmich9smod:trees_fractured",
+      "dmich9smod:patch_end_fern",
+      "dmich9smod:patch_end_ragweed",
+      "dmich9smod:patch_enders_delight",
+      "dmich9smod:patch_end_deathtoll",
+      "dmich9smod:patch_end_nightshade"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

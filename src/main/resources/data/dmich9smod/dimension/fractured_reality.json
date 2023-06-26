@@ -3,7 +3,7 @@
   "generator": {
     "type": "minecraft:noise",
     "seed": 1141623650,
-    "settings": "minecraft:overworld",
+    "settings": "dmich9smod:fractured_reality",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
@@ -71,7 +71,7 @@
           "biome": "dmich9smod:end_springs",
           "parameters": {
             "temperature": [
-              0.8,
+              0.7,
               1
             ],
             "humidity": [
@@ -101,7 +101,7 @@
           "biome": "dmich9smod:asteroid_field",
           "parameters": {
             "temperature": [
-              0.9,
+              0.8,
               1
             ],
             "humidity": [

@@ -12,6 +12,6 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class CrystalGolemRenderer extends GeoEntityRenderer<CrystalGolem> {
     public CrystalGolemRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new CrystalGolemModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 1.2f;
     }
 }

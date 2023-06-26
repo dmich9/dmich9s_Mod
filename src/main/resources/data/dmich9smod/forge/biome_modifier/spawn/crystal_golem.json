@@ -1,0 +1,22 @@
+{
+  "type": "forge:add_spawns",
+  "biomes":
+  {
+    "type": "forge:and",
+    "values":
+    [
+      "#forge:is_overworld",
+      {
+        "type": "forge:not",
+        "values": "#forge:is_mushroom"
+      }
+    ]
+  },
+  "spawners":
+  {
+    "type": "dmich9smod:crystal_golem",
+    "weight": 80,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -7,6 +7,7 @@ package net.dylan.dmich9smod.common.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -50,7 +51,14 @@ public class CorruptedZombie extends Monster implements IAnimatable {
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    // TODO separate walking and attacking animation
+    private static final AnimationBuilder ANIM_WALKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+    private static final int MELEE_ATTACK_DURATION = 40;
+    private int attackingTime;
+
+    // EVENTS //
+    private static final byte START_MELEE_ATTACK_EVENT = 61;
 
     // OTHER //
     private static final AttributeModifier CHARGE_SPEED_MODIFIER = new AttributeModifier("Charge movement speed", 1.72D, AttributeModifier.Operation.MULTIPLY_BASE);
@@ -64,14 +72,14 @@ public class CorruptedZombie extends Monster implements IAnimatable {
                 .add(Attributes.MOVEMENT_SPEED, 0.26D)
                 .add(Attributes.ARMOR, 2.0D)
                 .add(Attributes.MAX_HEALTH, 20.0D)
-                .add(Attributes.ATTACK_SPEED, 2.0D)
+                .add(Attributes.ATTACK_DAMAGE, 7.0D)
                 .build();
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new CorruptedZombie.InertGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this,1.0D,false));
+        this.goalSelector.addGoal(1, new CorruptedZombie.AttackGoal(this,1.0D,false));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class,8.0F));
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(0, new TargetLookingGoal(this, 12));
@@ -83,6 +91,14 @@ public class CorruptedZombie extends Monster implements IAnimatable {
         final AttributeInstance speedAttribute = getAttribute(Attributes.MOVEMENT_SPEED);
         if(null == this.getTarget() && speedAttribute.hasModifier(CHARGE_SPEED_MODIFIER)) {
             speedAttribute.removeModifier(CHARGE_SPEED_MODIFIER);
+        }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(this.attackingTime > 0) {
+            --this.attackingTime;
         }
     }
 
@@ -135,12 +151,33 @@ public class CorruptedZombie extends Monster implements IAnimatable {
 
     //// ANIMATIONS ////
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(ANIM_ATTACKING);
-            return PlayState.CONTINUE;
+    @Override
+    public void handleEntityEvent(byte pId) {
+        switch(pId) {
+            case START_MELEE_ATTACK_EVENT:
+                this.attackingTime = MELEE_ATTACK_DURATION;
+                break;
+            default:
+                super.handleEntityEvent(pId);
         }
-        event.getController().setAnimation(ANIM_IDLE);
+    }
+
+    @Override
+    public void swing(InteractionHand pHand, boolean pUpdateSelf) {
+        super.swing(pHand, pUpdateSelf);
+        if(!level.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+            this.level.broadcastEntityEvent(this, START_MELEE_ATTACK_EVENT);
+        }
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if(this.attackingTime > 0) {
+            event.getController().setAnimation(ANIM_ATTACKING);
+        } else if (event.isMoving()) {
+            event.getController().setAnimation(ANIM_WALKING);
+        } else {
+            event.getController().setAnimation(ANIM_IDLE);
+        }
         return PlayState.CONTINUE;
     }
 
@@ -179,6 +216,28 @@ public class CorruptedZombie extends Monster implements IAnimatable {
         public void tick() {
             this.entity.getNavigation().stop();
         }
+    }
+
+    private static class AttackGoal extends MeleeAttackGoal {
+
+        private final CorruptedZombie entity;
+
+        public AttackGoal(CorruptedZombie pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
+            super(pMob, pSpeedModifier, pFollowingTargetEvenIfNotSeen);
+            this.entity = pMob;
+            this.attackInterval = 60;
+        }
+
+        @Override
+        protected int getAttackInterval() {
+            return this.adjustedTickDelay(this.attackInterval);
+        }
+
+        @Override
+        protected void resetAttackCooldown() {
+            this.ticksUntilNextAttack = getAttackInterval();
+        }
+
     }
 
     private static class TargetLookingGoal extends TargetGoal {

@@ -12,6 +12,6 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class FracturedWandererRenderer extends GeoEntityRenderer<FracturedWanderer> {
     public FracturedWandererRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new FracturedWandererModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 0.4f;
     }
 }

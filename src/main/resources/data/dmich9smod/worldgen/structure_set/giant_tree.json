@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dmich9smod:giant_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 168925111,
+    "spacing": 34,
+    "separation": 12,
+    "type": "minecraft:random_spread"
+  }
+}

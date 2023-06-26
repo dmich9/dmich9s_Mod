@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_overworld",
+  "features": [
+    "dmich9smod:overworld_ambrosia_ore",
+    "dmich9smod:overworld_azurite_ore",
+    "dmich9smod:overworld_carnelian_ore",
+    "dmich9smod:overworld_garnet_ore",
+    "dmich9smod:overworld_serendibite_ore",
+    "dmich9smod:overworld_strontium_ore"
+  ],
+  "step": "underground_ores"
+}

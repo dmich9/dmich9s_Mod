@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.NeutralMob;
@@ -48,8 +49,14 @@ public class FracturedWanderer extends Monster implements NeutralMob, IAnimatabl
 
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.f_wanderer.standing", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_WALKING = new AnimationBuilder().addAnimation("animation.f_wanderer.walking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.f_wanderer.attacking", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+    private static final int MELEE_ATTACK_DURATION = 14;
+    private int attackingTime;
+
+    // EVENTS //
+    private static final byte START_MELEE_ATTACK_EVENT = 61;
 
     public FracturedWanderer(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -62,7 +69,6 @@ public class FracturedWanderer extends Monster implements NeutralMob, IAnimatabl
                 .add(Attributes.ARMOR, 2.0D)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE)
                 .add(Attributes.MAX_HEALTH, 20.0D)
-                .add(Attributes.ATTACK_SPEED, 2.0f)
                 .build();
     }
 
@@ -75,6 +81,14 @@ public class FracturedWanderer extends Monster implements NeutralMob, IAnimatabl
 
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this).setAlertOthers());
         this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, false));
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(this.attackingTime > 0) {
+            --this.attackingTime;
+        }
     }
 
     @Override
@@ -156,12 +170,33 @@ public class FracturedWanderer extends Monster implements NeutralMob, IAnimatabl
 
     //// ANIMATIONS ////
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(ANIM_ATTACKING);
-            return PlayState.CONTINUE;
+    @Override
+    public void handleEntityEvent(byte pId) {
+        switch(pId) {
+            case START_MELEE_ATTACK_EVENT:
+                this.attackingTime = MELEE_ATTACK_DURATION;
+                break;
+            default:
+                super.handleEntityEvent(pId);
         }
-        event.getController().setAnimation(ANIM_IDLE);
+    }
+
+    @Override
+    public void swing(InteractionHand pHand, boolean pUpdateSelf) {
+        super.swing(pHand, pUpdateSelf);
+        if(!level.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+            this.level.broadcastEntityEvent(this, START_MELEE_ATTACK_EVENT);
+        }
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if(this.attackingTime > 0) {
+            event.getController().setAnimation(ANIM_ATTACKING);
+        } else if (event.isMoving()) {
+            event.getController().setAnimation(ANIM_WALKING);
+        } else {
+            event.getController().setAnimation(ANIM_IDLE);
+        }
         return PlayState.CONTINUE;
     }
 

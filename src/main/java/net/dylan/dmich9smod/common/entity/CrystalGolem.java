@@ -11,10 +11,13 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -29,6 +32,7 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -45,18 +49,24 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class CrystalGolem extends Monster implements IAnimatable {
 
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.model.idle", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.model.attacking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.crystal_golem.idle", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_WALKING = new AnimationBuilder().addAnimation("animation.crystal_golem.walking", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_ATTACKING = new AnimationBuilder().addAnimation("animation.crystal_golem.attacking", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+    private static final int MELEE_ATTACK_DURATION = 25;
+    private byte animationEvent;
+    private int animationTime;
 
     // EVENTS //
-    private static final byte START_LEAP_ATTACK_EVENT = 11;
-    private static final byte STOP_LEAP_ATTACK_EVENT = 12;
+    private static final byte START_MELEE_ATTACK_EVENT = 61;
+    private static final byte START_LEAP_ATTACK_EVENT = 62;
+    private static final byte STOP_LEAP_ATTACK_EVENT = 63;
 
     // LEAP ATTACK //
     private BlockPos leapToTarget = null;
@@ -82,6 +92,10 @@ public class CrystalGolem extends Monster implements IAnimatable {
                 .add(Attributes.MAX_HEALTH, 80.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
                 .build();
+    }
+
+    public static boolean canCrystalGolemSpawn(EntityType<? extends CrystalGolem> entityType, ServerLevelAccessor level, MobSpawnType mobSpawnType, BlockPos pos, Random random) {
+        return pos.getY() < level.getSeaLevel() && !level.canSeeSky(pos.above()) && Monster.checkMonsterSpawnRules(entityType, level, mobSpawnType, pos, random);
     }
 
     @Override
@@ -112,6 +126,14 @@ public class CrystalGolem extends Monster implements IAnimatable {
                 && this.level.getBlockState(blockPosBelow).getMaterial().blocksMotion();
         if(isDoneLeaping) {
             this.stopLeapAttack();
+        }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(this.animationTime > 0) {
+            --this.animationTime;
         }
     }
 
@@ -174,11 +196,18 @@ public class CrystalGolem extends Monster implements IAnimatable {
     @Override
     public void handleEntityEvent(byte pId) {
         switch (pId) {
+            case START_MELEE_ATTACK_EVENT:
+                this.animationEvent = pId;
+                this.animationTime = MELEE_ATTACK_DURATION;
+                break;
             case START_LEAP_ATTACK_EVENT:
                 addLeapAttackParticles(ParticleTypes.CLOUD, this.position(), 12, 0.10D);
+                this.animationEvent = pId;
+                this.animationTime = 72000;
                 break;
             case STOP_LEAP_ATTACK_EVENT:
                 addLeapAttackParticles(ParticleTypes.CLOUD, this.position(), 32, 0.15D);
+                this.animationTime = 0;
                 break;
             default:
                 super.handleEntityEvent(pId);
@@ -214,12 +243,32 @@ public class CrystalGolem extends Monster implements IAnimatable {
 
     //// ANIMATIONS ////
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(ANIM_ATTACKING);
-            return PlayState.CONTINUE;
+    @Override
+    public void swing(InteractionHand pHand, boolean pUpdateSelf) {
+        super.swing(pHand, pUpdateSelf);
+        if(!level.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+            this.level.broadcastEntityEvent(this, START_MELEE_ATTACK_EVENT);
         }
-        event.getController().setAnimation(ANIM_IDLE);
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if(animationTime > 0) {
+            switch (animationEvent) {
+                case START_MELEE_ATTACK_EVENT:
+                    event.getController().setAnimation(ANIM_ATTACKING);
+                    break;
+                case START_LEAP_ATTACK_EVENT:
+                    // TODO animation while leaping
+                    event.getController().setAnimation(ANIM_WALKING);
+                    break;
+                default:
+                    break;
+            }
+        } else if (event.isMoving()) {
+            event.getController().setAnimation(ANIM_WALKING);
+        } else {
+            event.getController().setAnimation(ANIM_IDLE);
+        }
         return PlayState.CONTINUE;
     }
 
