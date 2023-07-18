@@ -68,8 +68,8 @@ public class Thunderbird extends Monster implements FlyingAnimal, IAnimatable {
     
     // GECKOLIB //
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final AnimationBuilder ANIM_IDLE_STANDING = new AnimationBuilder().addAnimation("animation.dmich_tbird.standing", ILoopType.EDefaultLoopTypes.LOOP);
-    private static final AnimationBuilder ANIM_IDLE_FLYING = new AnimationBuilder().addAnimation("animation.dmich_tbird.flying", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE_STANDING = new AnimationBuilder().addAnimation("animation.thunderbird.standing", ILoopType.EDefaultLoopTypes.LOOP);
+    private static final AnimationBuilder ANIM_IDLE_FLYING = new AnimationBuilder().addAnimation("animation.thunderbird.flying", ILoopType.EDefaultLoopTypes.LOOP);
 
     // FLYING //
     private boolean wantsToFly;

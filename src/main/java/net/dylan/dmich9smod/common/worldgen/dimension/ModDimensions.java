@@ -4,9 +4,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraftforge.client.ISkyRenderHandler;
@@ -18,6 +20,8 @@ public class ModDimensions {
             new ResourceLocation(dmich9sMod.MOD_ID, "fractured_reality"));
     public static final ResourceKey<DimensionType> FRACTURED_TYPE =
             ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, FRACTURED_KEY.getRegistryName());
+
+
 
     private static class FracturedSkyRenderer implements ISkyRenderHandler {
         private static final ResourceLocation TEXTURE = new ResourceLocation(dmich9sMod.MOD_ID, "textures/environment/fractured_skybox.png");
