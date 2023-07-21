@@ -357,6 +357,28 @@
   "item.dmich9smod.crystal_golem_spawn_egg": "Crystal Golem Spawn Egg",
   "entity.dmich9smod.crystal_golem": "Crystal Golem",
 
+  "block.dmich9smod.dreamscape_carnelian_ore": "Dreamscape Carnelian Ore",
+  "block.dmich9smod.dreamscape_strontium_ore": "Dreamscape Strontium Ore",
+  "block.dmich9smod.dreamscape_garnet_ore": "Dreamscape Garnet Ore",
+  "block.dmich9smod.dreamscape_azurite_ore": "Dreamscape Azurite Ore",
+  "block.dmich9smod.dreamscape_serendibite_ore": "Dreamscape Serendibite Ore",
+  "block.dmich9smod.dreamscape_ambrosia_ore": "Dreamscape Ambrosia Ore",
+  "block.dmich9smod.end_carnelian_ore": "End Carnelian Ore",
+  "block.dmich9smod.end_strontium_ore": "End Strontium Ore",
+  "block.dmich9smod.end_garnet_ore": "End Garnet Ore",
+  "block.dmich9smod.end_azurite_ore": "End Azurite Ore",
+  "block.dmich9smod.end_serendibite_ore": "End Serendibite Ore",
+  "block.dmich9smod.end_ambrosia_ore": "End Ambrosia Ore",
+  "block.dmich9smod.nether_carnelian_ore": "Nether Carnelian Ore",
+  "block.dmich9smod.nether_strontium_ore": "Nether Strontium Ore",
+  "block.dmich9smod.nether_garnet_ore": "Nether Garnet Ore",
+  "block.dmich9smod.nether_azurite_ore": "Nether Azurite Ore",
+  "block.dmich9smod.nether_serendibite_ore": "Nether Serendibite Ore",
+  "block.dmich9smod.nether_ambrosia_ore": "Nether Ambrosia Ore",
+
+  "block.dmich9smod.chorus_bricks_chiseled": "Chiseled Chorus Bricks",
+  "block.dmich9smod.chorus_bricks_pillar": "Pillar Chorus Bricks",
+
   "dimension.dmich9smod.fractured_reality": "Fractured Reality",
 
   "biome.dmich9smod.dreamscape": "Dreamscape",
