@@ -1,51 +1,20 @@
 {
-  "type": "minecraft:tree",
+  "type": "dmich9smod:template_pool",
   "config": {
-    "ignore_vines": true,
-    "force_dirt": false,
-    "minimum_size": {
-      "type": "minecraft:two_layers_feature_size",
-      "limit": 1,
-      "lower_size": 0,
-      "upper_size": 2
-    },
-    "dirt_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:dirt"
+    "processors": "minecraft:empty",
+    "structures": [
+      {
+        "data": "dmich9smod:fractured_tree/fractured_tree_1",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:fractured_tree/fractured_tree_2",
+        "weight": 1
+      },
+      {
+        "data": "dmich9smod:fractured_tree/fractured_tree_3",
+        "weight": 1
       }
-    },
-    "trunk_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "dmich9smod:fractured_log",
-        "Properties": {
-          "axis": "y"
-        }
-      }
-    },
-    "foliage_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "dmich9smod:fractured_leaves",
-        "Properties": {
-          "persistent": "false",
-          "distance": "7"
-        }
-      }
-    },
-    "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
-      "base_height": 5,
-      "height_rand_a": 6,
-      "height_rand_b": 3
-    },
-    "foliage_placer": {
-      "type": "minecraft:blob_foliage_placer",
-      "radius": 2,
-      "offset": 0,
-      "height": 4
-    },
-    "decorators": []
+    ]
   }
 }
