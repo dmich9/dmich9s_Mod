@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "dmich9smod:azurite_ore",
-    "dmich9smod:deepslate_azurite_ore"
+    "dmich9smod:deepslate_azurite_ore",
+    "dmich9smod:dreamscape_azurite_ore",
+    "dmich9smod:end_azurite_ore",
+    "dmich9smod:nether_azurite_ore"
   ]
 }

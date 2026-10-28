@@ -1,15 +1,9 @@
 {
-  "feature": "dmich9smod:asteroid",
+  "feature": "dmich9smod:end_ore_carnelian",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 0,
-          "max_inclusive": 2
-        }
-      }
+      "count": 7
     },
     {
       "type": "minecraft:in_square"
@@ -19,10 +13,10 @@
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "absolute": 16
+          "above_bottom": 0
         },
         "max_inclusive": {
-          "absolute": 96
+          "below_top": 80
         }
       }
     },

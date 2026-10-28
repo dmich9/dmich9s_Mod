@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "dmich9smod:chorus_bricks"
+    }
+  },
+  "result": {
+    "item": "dmich9smod:chorus_bricks_chiseled",
+    "count": 4
+  }
+}

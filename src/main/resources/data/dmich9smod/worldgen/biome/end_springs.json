@@ -1,7 +1,7 @@
 {
   "temperature": 1,
   "downfall": 0,
-  "precipitation": "rain",
+  "precipitation": "none",
   "category": "none",
   "effects": {
     "sky_color": 6826080,
@@ -15,7 +15,7 @@
       "offset": 2
     },
     "music": {
-      "sound": "dmich9smod:dreamscape",
+      "sound": "dmich9smod:end_springs",
       "min_delay": 12000,
       "max_delay": 24000,
       "replace_current_music": true
@@ -197,12 +197,12 @@
     [],
     [],
     [
-      "dmich9smod:ore_ambrosia",
-      "dmich9smod:ore_azurite",
-      "dmich9smod:ore_carnelian",
-      "dmich9smod:ore_garnet",
-      "dmich9smod:ore_serendibite",
-      "dmich9smod:ore_strontium",
+      "dmich9smod:end_ore_ambrosia",
+      "dmich9smod:end_ore_azurite",
+      "dmich9smod:end_ore_carnelian",
+      "dmich9smod:end_ore_garnet",
+      "dmich9smod:end_ore_serendibite",
+      "dmich9smod:end_ore_strontium",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
@@ -216,7 +216,6 @@
       "minecraft:glow_lichen",
       "dmich9smod:patch_end_grass",
       "dmich9smod:patch_end_tall_grass",
-      "dmich9smod:trees_fractured",
       "dmich9smod:patch_end_fern",
       "dmich9smod:patch_end_ragweed",
       "dmich9smod:patch_enders_delight",

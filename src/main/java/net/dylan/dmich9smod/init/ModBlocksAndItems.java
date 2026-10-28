@@ -26,6 +26,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
@@ -264,6 +265,13 @@ public class ModBlocksAndItems {
     public static final RegistryObject<Block> ASTEROID_GREEN = registerBlock("asteroid_green", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> ASTEROID_RED = registerBlock("asteroid_red", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> ASTEROID_BLACK = registerBlock("asteroid_black", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
+
+    public static final List<RegistryObject<Block>> ASTEROIDS = List.of(
+            ASTEROID_WHITE, ASTEROID_ORANGE, ASTEROID_MAGENTA, ASTEROID_LIGHT_BLUE,
+            ASTEROID_YELLOW, ASTEROID_LIME, ASTEROID_PINK, ASTEROID_GRAY,
+            ASTEROID_LIGHT_GRAY, ASTEROID_CYAN, ASTEROID_PURPLE, ASTEROID_BLUE,
+            ASTEROID_BROWN, ASTEROID_GREEN, ASTEROID_RED, ASTEROID_BLACK
+    );
     public static final RegistryObject<Item> DREAMERS_FRIGHT = ITEMS.register("dreamers_fright", DreamersFrightItem::new);
     public static final RegistryObject<Block> STAR_WHITE = registerBlock("star_white", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
     public static final RegistryObject<Block> STAR_ORANGE = registerBlock("star_orange", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);

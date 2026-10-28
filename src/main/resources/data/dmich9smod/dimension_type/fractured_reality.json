@@ -1,6 +1,8 @@
 
 {
+  "effects": "dmich9smod:fractured_reality",
   "ultrawarm": false,
+  "fixed_time": 6000,
   "natural": true,
   "piglin_safe": false,
   "respawn_anchor_works": false,

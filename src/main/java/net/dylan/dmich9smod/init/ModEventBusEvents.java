@@ -1,17 +1,22 @@
 package net.dylan.dmich9smod.init;
 
+import net.dylan.dmich9smod.client.FracturedRealityEffects;
 import net.dylan.dmich9smod.client.particle.EndTorchParticles;
 import net.dylan.dmich9smod.common.entity.*;
 import net.dylan.dmich9smod.core.dmich9sMod;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.DimensionSpecialEffects;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 import javax.annotation.Nonnull;
 
@@ -20,17 +25,19 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>>
-                                                   event) {
+                                                               event) {
         event.getRegistry().registerAll(
 
         );
     }
+
     @SubscribeEvent
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ModParticles.END_TORCH_PARTICLES.get(), EndTorchParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.NETHER_TORCH_PARTICLES.get(), EndTorchParticles.Provider::new);
 
     }
+
     @SubscribeEvent
     public static void entityAtributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.CORRUPTED_ZOMBIE.get(), CorruptedZombie.setAttributes());
@@ -49,4 +56,24 @@ public class ModEventBusEvents {
         SpawnPlacements.register(ModEntityTypes.CRYSTAL_GOLEM.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, CrystalGolem::canCrystalGolemSpawn);
     }
 
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() ->
+                DimensionSpecialEffects.EFFECTS.put(
+                        new ResourceLocation("dmich9smod", "fractured_reality"),
+                        new FracturedRealityEffects()));
+
+
+    }
+
+    @Mod.EventBusSubscriber(modid = "yourmodid", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientOnly {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() ->
+                    DimensionSpecialEffects.EFFECTS.put(
+                            new ResourceLocation("dmich9smod", "fractured_reality"),
+                            new FracturedRealityEffects()));
+        }
+    }
 }

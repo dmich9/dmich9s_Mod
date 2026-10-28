@@ -22,15 +22,6 @@ public class ModDimensions {
             ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, FRACTURED_KEY.getRegistryName());
 
 
-
-    private static class FracturedSkyRenderer implements ISkyRenderHandler {
-        private static final ResourceLocation TEXTURE = new ResourceLocation(dmich9sMod.MOD_ID, "textures/environment/fractured_skybox.png");
-
-        @Override
-        public void render(int ticks, float partialTicks, PoseStack matrixStack, ClientLevel world, Minecraft mc) {
-            mc.getTextureManager().bindForSetup(TEXTURE);
-        }
-    }
     public static void register() {
         System.out.println("Registering ModDimensions for: " + dmich9sMod.MOD_ID);
     }

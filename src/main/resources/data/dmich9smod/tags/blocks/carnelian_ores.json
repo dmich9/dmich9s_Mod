@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "dmich9smod:carnelian_ore",
-    "dmich9smod:deepslate_carnelian_ore"
+    "dmich9smod:deepslate_carnelian_ore",
+    "dmich9smod:dreamscape_carnelian_ore",
+    "dmich9smod:end_carnelian_ore",
+    "dmich9smod:nether_carnelian_ore"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "temperature": 1,
   "downfall": 0,
-  "precipitation": "rain",
+  "precipitation": "none",
   "category": "none",
   "effects": {
     "sky_color": 16733525,
@@ -197,12 +197,12 @@
     [],
     [],
     [
-      "dmich9smod:ore_ambrosia",
-      "dmich9smod:ore_azurite",
-      "dmich9smod:ore_carnelian",
-      "dmich9smod:ore_garnet",
-      "dmich9smod:ore_serendibite",
-      "dmich9smod:ore_strontium",
+      "dmich9smod:dreamscape_ore_ambrosia",
+      "dmich9smod:dreamscape_ore_azurite",
+      "dmich9smod:dreamscape_ore_carnelian",
+      "dmich9smod:dreamscape_ore_garnet",
+      "dmich9smod:dreamscape_ore_serendibite",
+      "dmich9smod:dreamscape_ore_strontium",
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",

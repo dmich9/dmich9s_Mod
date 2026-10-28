@@ -7,10 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import terrablender.api.ParameterUtils;
 import terrablender.api.RegionType;
-
-import java.util.List;
 import java.util.function.Consumer;
 
 public class RegionData extends terrablender.api.Region {
@@ -34,22 +31,6 @@ public class RegionData extends terrablender.api.Region {
         this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
             // if a forest biome could spawn, there is a chance it's a maple forest (very basic implementation)
             builder.replaceBiome(Biomes.FOREST, BiomesData.MAPLE_FOREST);
-            builder.replaceBiome(Biomes.FOREST, BiomesData.FRACTURED_FOREST);
-            builder.replaceBiome(Biomes.THE_VOID, BiomesData.ASTEROID_FIELD);
-            // this is a highly customized way to spawn the dreamscape biome
-            List<Climate.ParameterPoint> dreamScapeBiome = new ParameterUtils.ParameterPointListBuilder()
-                    .temperature(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.WARM)
-                    .humidity(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY, ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET, ParameterUtils.Humidity.HUMID)
-                    .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.COAST, ParameterUtils.Continentalness.FAR_INLAND), ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.MID_INLAND, ParameterUtils.Continentalness.FAR_INLAND))
-                    .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
-                    .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
-                    .weirdness(ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.PEAK_VARIANT, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
-                    .build();
-
-            dreamScapeBiome.forEach(point -> builder.replaceBiome(point, BiomesData.DREAMSCAPE));
-
-
-
         });
     }
 }

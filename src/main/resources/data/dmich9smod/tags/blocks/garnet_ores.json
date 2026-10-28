@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "dmich9smod:garnet_ore",
-    "dmich9smod:deepslate_garnet_ore"
+    "dmich9smod:deepslate_garnet_ore",
+    "dmich9smod:dreamscape_garnet_ore",
+    "dmich9smod:end_garnet_ore",
+    "dmich9smod:nether_garnet_ore"
   ]
 }
